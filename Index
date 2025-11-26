@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Love Crafted Digital | Western-Inspired Web Design</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Love Crafted Digital builds custom, western-inspired websites and branding for small businesses." />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Favicon (optional if you add favicon.svg) -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="css/main.css" />
+</head>
+
+<body>
+  <!-- =========================
+       HEADER
+  ========================= -->
+  <header>
+    <div class="container">
+      <div class="nav-inner">
+        <a href="#top" class="brand">
+          <!-- Your real logo image -->
+          <img
+            src="assets/logo-lovecrafted-digital.png"
+            alt="Love Crafted Digital"
+            class="brand-logo">
+        </a>
+
+        <nav class="nav-links" aria-label="Main navigation">
+          <a href="#services">Services</a>
+          <a href="#pricing">Packages</a>
+          <a href="#demos">Sample Sites</a>
+          <a href="#process">Process</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <div class="nav-cta">
+          <a href="#contact" class="btn btn-outline">Book a consult</a>
+        </div>
+
+        <button class="menu-toggle" aria-label="Toggle navigation" id="menuToggle">
+          ☰
+        </button>
+      </div>
+    </div>
+
+    <div class="mobile-nav" id="mobileNav">
+      <div class="container">
+        <div class="mobile-nav-inner">
+          <a href="#services">Services</a>
+          <a href="#pricing">Packages</a>
+          <a href="#demos">Sample Sites</a>
+          <a href="#process">Process</a>
+          <a href="#contact">Contact</a>
+
+          <div class="mobile-nav-cta">
+            <a href="#contact" class="btn btn-primary" style="width: 100%; justify-content: center;">Start a project</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================
+       HERO
+  ========================= -->
+  <main id="top">
+    <section class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div>
+            <div class="hero-eyebrow">
+              <span class="heart-dot"></span>
+              Western-inspired, digitally crafted
+            </div>
+            <h1 class="hero-title">
+              Websites with a <span class="accent">cattle brand</span> soul and a modern digital heart.
+            </h1>
+            <p class="hero-subtitle">
+              Love Crafted Digital builds custom, conversion-focused sites for
+              <strong>small businesses, makers, and photographers</strong> who want a western edge without losing a clean, modern feel.
+            </p>
+
+            <div class="hero-ctas">
+              <a href="#contact" class="btn btn-primary">Start a project</a>
+              <a href="#demos" class="btn btn-outline">View sample sites</a>
+            </div>
+
+            <div class="hero-meta">
+              <span><span class="hero-meta-dot"></span> Remote builds beyond DFW</span>
+              <span><span class="hero-meta-dot"></span> Photo shoots subcontracted as needed</span>
+            </div>
+          </div>
+
+          <aside class="hero-board" aria-label="Sample project overview">
+            <div class="hero-board-tag">
+              Project snapshot
+              <span class="hero-board-tag-line"></span>
+            </div>
+
+            <div class="showcase-grid">
+              <div class="mockup-main">
+                <div class="mockup-screen">
+                  <div class="mockup-screen-header">
+                    <div>
+                      <div class="mockup-site-title">Sample build</div>
+                      <div class="mockup-site-name">Love Crafted – Premium</div>
+                    </div>
+                    <div class="mockup-bar">
+                      <div class="mockup-dot"></div>
+                      <div class="mockup-dot"></div>
+                      <div class="mockup-dot"></div>
+                    </div>
+                  </div>
+
+                  <div class="mockup-chip-row">
+                    <span class="mockup-chip primary">Brand kit</span>
+                    <span class="mockup-chip">Custom layout</span>
+                    <span class="mockup-chip">Copy polish</span>
+                  </div>
+
+                  <div class="mockup-footer">
+                    <span>Timeline: <strong>4–6 weeks</strong></span>
+                    <span>Investment: <strong>$2.5k–$4k</strong></span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mockup-mini">
+                <div class="mockup-mini-title">
+                  <span>Launch-ready details</span>
+                  <span class="pill gold">SEO & mobile</span>
+                </div>
+                <div class="mockup-mini-meta">
+                  <span><strong>Platforms:</strong> Showit, Squarespace, Shopify</span>
+                  <span><strong>Extras:</strong> merch mockups, basic brand guide</span>
+                </div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         ABOUT / SERVICES
+    ========================= -->
+    <section id="services">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <h2 class="section-title">Crafted for small brands with big stories.</h2>
+          </div>
+          <p class="section-subtitle">
+            From single-page starter sites to full premium builds, everything is designed
+            to feel like <em>you</em>—not a generic template. Western, modern, or a mix of both.
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-main">
+            <p>
+              Love Crafted Digital focuses on small businesses that want to stand out without spending agency money.
+              Think coffee shops, photographers, ranch brands, local makers, and service businesses.
+            </p>
+            <p>
+              You bring your story; I bring the design, structure, and tech. Together we’ll build something that feels
+              like your brand—clean, bold, and a little bit western around the edges.
+            </p>
+
+            <div class="about-meta-grid">
+              <div class="stat-card">
+                <div class="stat-label">Core services</div>
+                <div class="stat-value">Web & Branding</div>
+                <div class="stat-note">Websites, logos, merch, and basic brand systems.</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-label">Work style</div>
+                <div class="stat-value">Remote-First</div>
+                <div class="stat-note">DFW-based but available anywhere you are.</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-label">Photo support</div>
+                <div class="stat-value">Subcontracted</div>
+                <div class="stat-note">Shoots priced per project with trusted partners.</div>
+              </div>
+            </div>
+          </div>
+
+          <aside class="about-list-card">
+            <h3>What we can build together</h3>
+            <ul class="about-list">
+              <li>
+                <span class="about-bullet"></span>
+                <span>Launch-ready websites on platforms like Squarespace, Showit, or Shopify.</span>
+              </li>
+              <li>
+                <span class="about-bullet"></span>
+                <span>Western-meets-modern branding with rope-heart vibes and bold blue accents.</span>
+              </li>
+              <li>
+                <span class="about-bullet"></span>
+                <span>Merch-ready artwork for shirts, hats, and stickers.</span>
+              </li>
+              <li>
+                <span class="about-bullet"></span>
+                <span>Conversion-focused layouts for bookings, leads, and online sales.</span>
+              </li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         PACKAGES / PRICING
+    ========================= -->
+    <section id="pricing">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <h2 class="section-title">Packages built for different stages.</h2>
+          </div>
+          <p class="section-subtitle">
+            Three core packages that keep things simple. Every project starts with a quick call
+            so we can fit one of these to your actual needs and budget.
+          </p>
+        </div>
+
+        <div class="cards-grid">
+          <!-- Starter -->
+          <article class="tier-card outline">
+            <div class="tier-label-row">
+              <div>
+                <h3 class="tier-name">Starter</h3>
+                <p class="tier-tagline">Lean, clean, ready to launch</p>
+              </div>
+              <span class="pill-small">Best for new brands</span>
+            </div>
+
+            <div class="price">$800–$1,200 <span>one-time</span></div>
+            <p class="tier-desc">
+              A simple, modern site with just enough western flavor to feel like you—but not so much it scares off city folks.
+            </p>
+
+            <ul class="feature-list">
+              <li>
+                <div class="feature-check"><span>✓</span></div>
+                <span>Up to 3 pages (Home, About, Contact/Services).</span>
+              </li>
+              <li>
+                <div class="feature-check"><span>✓</span></div>
+                <span>Light branding polish (colors, fonts, basic layout).</span>
+              </li>
+              <li>
+                <div class="feature-check"><span>✓</span></div>
+                <span>Mobile-friendly design and basic SEO setup.</span>
+              </li>
+              <li>
+                <div class="feature-check"><span>✓</span></div>
+                <span>Connection to your booking, contact form, or socials.</span>
+              </li>
+            </ul>
+
+            <div class="tier-meta">
+              <span>Typical timeline: 1–3 weeks</span>
+              <a href="demo-starter.html" class="sample-link">View starter demo</a>
+            </div>
+          </article>
+
+          <!-- Standard -->
+          <article class="tier-card">
+            <div class="tier-label-row">
+              <div>
+                <h3 class="tier-name">Standard</h3>
+                <p class="tier-tagline">Western x modern blend</p>
+              </div>
+              <span class="pill-small hot">Most popular</span>
+            </div>
+
+            <div class="price">$1,500–$2,200 <span>one-time</span></div>
+            <p class="tier-desc">
+              A fuller build where we lean into the Love Crafted vibe: earthy tones, blue centerpieces, and a rope-heart brand feel.
+            </p>
+
+            <ul class="feature-list">
+              <li>
+                <div class="feature-check"><span>✓</span></div>
+                <span>Up to 6 pages (Home, About, Services, Gallery/Portfolio, FAQ, Contact).</span>
+              </li>
+              <li>
+                <div class="feature-check"><span>✓</span></div>
+                <span>Custom section layouts and stronger visual hierarchy.</span>
+              </li>
+              <li>
+                <div class="feature-check"><span>✓</span></div>
+                <span>Basic brand kit: logo lockup, color palette, and font pairing.</span>
+              </li>
+              <li>
+                <div class="feature-check"><span>✓</span></div>
+                <span>Launch checklist and a short handoff video walkthrough.</span>
+              </li>
+            </ul>
+
+            <div class="tier-meta">
+              <span>Typical timeline: 3–5 weeks</span>
+              <a href="demo-standard.html" class="sample-link">View standard demo</a>
+            </div>
+          </article>
+
+          <!-- Premium -->
+          <article class="tier-card premium">
+            <div class="tier-label-row">
+              <div>
+                <h3 class="tier-name">Premium</h3>
+                <p class="tier-tagline">Full brand experience</p>
+              </div>
+              <span class="pill-small hot">High impact</span>
+            </div>
+
+            <div class="price">$2,500+ <span>project-based</span></div>
+            <p class="tier-desc">
+              A fully custom experience that ties your website, branding, and merch together. Polished visuals, strong storytelling, and gold-accent details.
+            </p>
+
+            <ul class="feature-list">
+              <li>
+                <div class="feature-check"><span>✓</span></div>
+                <span>Custom multi-page site with refined western-modern art direction.</span>
+              </li>
+              <li>
+                <div class="feature-check"><span>✓</span></div>
+                <span>Brand system: logo suite, color + type system, usage notes.</span>
+              </li>
+              <li>
+                <div class="feature-check"><span>✓</span></div>
+                <span>Merch mockups for shirts, hats, and stickers.</span>
+              </li>
+              <li>
+                <div class="feature-check"><span>✓</span></div>
+                <span>Optional photo shoot coordination (subcontracted, priced separately).</span>
+              </li>
+            </ul>
+
+            <div class="tier-meta">
+              <span>Typical timeline: 4–8 weeks</span>
+              <a href="demo-premium.html" class="sample-link">View premium demo</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         DEMO SITES
+    ========================= -->
+    <section id="demos">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <h2 class="section-title">See example layouts by budget.</h2>
+          </div>
+          <p class="section-subtitle">
+            Each demo shows a different style: lighter starter, mixed standard, and bold premium.
+            Click into any of them to explore the layout and flow.
+          </p>
+        </div>
+
+        <div class="demo-grid">
+          <article class="demo-card">
+            <div class="demo-thumbnail">
+              <span class="demo-pill">Starter</span>
+            </div>
+            <h3 class="demo-title">Simple one-page service site</h3>
+            <p class="demo-desc">
+              Clean, straightforward layout that gets people to contact or book without distractions.
+            </p>
+            <div class="demo-footer">
+              <span>Ideal for: new businesses</span>
+              <a href="demo-starter.html" class="demo-link">Open demo</a>
+            </div>
+          </article>
+
+          <article class="demo-card">
+            <div class="demo-thumbnail">
+              <span class="demo-pill">Standard</span>
+            </div>
+            <h3 class="demo-title">Western x modern hybrid</h3>
+            <p class="demo-desc">
+              Structured sections for services, gallery, and FAQs with a stronger brand presence.
+            </p>
+            <div class="demo-footer">
+              <span>Ideal for: growing brands</span>
+              <a href="demo-standard.html" class="demo-link">Open demo</a>
+            </div>
+          </article>
+
+          <article class="demo-card">
+            <div class="demo-thumbnail">
+              <span class="demo-pill">Premium</span>
+            </div>
+            <h3 class="demo-title">Full brand experience</h3>
+            <p class="demo-desc">
+              Rich visuals, storytelling, and merch integration for brands ready to level up.
+            </p>
+            <div class="demo-footer">
+              <span>Ideal for: established brands</span>
+              <a href="demo-premium.html" class="demo-link">Open demo</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         PROCESS
+    ========================= -->
+    <section id="process">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <h2 class="section-title">A simple, guided build process.</h2>
+          </div>
+          <p class="section-subtitle">
+            No tech overwhelm. Just clear steps, check-ins, and a finished site you actually know how to use.
+          </p>
+        </div>
+
+        <div class="process-grid">
+          <ul class="step-list">
+            <li class="step">
+              <div class="step-number">01</div>
+              <div>
+                <div class="step-title">Quick discovery call</div>
+                <p class="step-text">
+                  We talk through your business, goals, budget, and timeline. From there I’ll recommend the right package or a custom option.
+                </p>
+              </div>
+            </li>
+            <li class="step">
+              <div class="step-number">02</div>
+              <div>
+                <div class="step-title">Content & visuals</div>
+                <p class="step-text">
+                  You provide copy and photos, or I help refine and organize what you have. Photo shoots can be subcontracted if you need fresh images.
+                </p>
+              </div>
+            </li>
+            <li class="step">
+              <div class="step-number">03</div>
+              <div>
+                <div class="step-title">Design & build</div>
+                <p class="step-text">
+                  I design the layout, build the site, and send previews for feedback. You’ll see key pages before we lock anything in.
+                </p>
+              </div>
+            </li>
+            <li class="step">
+              <div class="step-number">04</div>
+              <div>
+                <div class="step-title">Launch & handoff</div>
+                <p class="step-text">
+                  Once approved, we connect your domain, run through a launch checklist, and I record a quick video showing you how to update things.
+                </p>
+              </div>
+            </li>
+          </ul>
+
+          <aside class="process-note">
+            <strong>Not limited to DFW.</strong> While I’m based in Texas, all projects can be handled remotely via video calls and email. If we bring in a photographer, we’ll work out location and pricing based on your area.
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         CONTACT
+    ========================= -->
+    <section id="contact">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <h2 class="section-title">Ready to talk about your project?</h2>
+          </div>
+          <p class="section-subtitle">
+            Send a quick overview of your business and what you need. I’ll follow up with options
+            that match your budget and timeline.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-card">
+            <p>
+              No pressure, no hard sell—just an honest look at what would make the most sense for you right now.
+              If we’re a good fit, we’ll keep going. If not, you’ll still walk away with more clarity.
+            </p>
+
+            <div class="contact-meta">
+              <div><strong>Typical clients:</strong> small businesses, service pros, photographers, local brands.</div>
+              <div><strong>Location:</strong> DFW / Burleson area, serving clients remotely.</div>
+              <div><strong>Availability:</strong> limited slots each month to keep work quality high.</div>
+            </div>
+          </div>
+
+          <!-- mailto keeps it simple; you can hook this to a real form handler later -->
+          <form class="contact-form" action="mailto:hello@lovecrafteddigital.com" method="post" enctype="text/plain">
+            <div class="field-group">
+              <label class="field-label" for="name">Name <span>*</span></label>
+              <input class="input" type="text" id="name" name="name" required />
+            </div>
+
+            <div class="field-group">
+              <label class="field-label" for="email">Email <span>*</span></label>
+              <input class="input" type="email" id="email" name="email" required />
+            </div>
+
+            <div class="field-group">
+              <label class="field-label" for="business">Business name</label>
+              <input class="input" type="text" id="business" name="business" />
+            </div>
+
+            <div class="field-group">
+              <label class="field-label" for="budget">Rough budget</label>
+              <input class="input" type="text" id="budget" name="budget" placeholder="$800–$1,200, $1,500–$2,200, $2,500+..." />
+            </div>
+
+            <div class="field-group">
+              <label class="field-label" for="message">What do you need built? <span>*</span></label>
+              <textarea id="message" name="message" required placeholder="Tell me about your business, current site (if any), and what you’d like to improve."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="margin-top: 0.5rem;">
+              Send project inquiry
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================
+       FOOTER
+  ========================= -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <span>© <span id="year"></span> Love Crafted Digital. All rights reserved.</span>
+        <div class="footer-links">
+          <a href="#top">Back to top</a>
+          <a href="#pricing">Packages</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile nav toggle
+    const menuToggle = document.getElementById("menuToggle");
+    const mobileNav = document.getElementById("mobileNav");
+
+    menuToggle.addEventListener("click", () => {
+      mobileNav.classList.toggle("open");
+    });
+
+    // Close mobile nav when clicking a link
+    mobileNav.addEventListener("click", (e) => {
+      if (e.target.tagName === "A") {
+        mobileNav.classList.remove("open");
+      }
+    });
+
+    // Set footer year
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
