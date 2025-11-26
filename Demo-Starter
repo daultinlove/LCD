@@ -1,1 +1,175 @@
 
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Starter Demo | Love Crafted Digital</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: "Inter", system-ui, sans-serif;
+      background: #0b1120;
+      color: #e5e7eb;
+    }
+    .wrap {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 2.5rem 1.3rem 3rem;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 3rem;
+    }
+    .logo-img {
+      height: 44px;
+      width: auto;
+      display: block;
+    }
+    nav a {
+      text-decoration: none;
+      font-size: 0.85rem;
+      color: #9ca3af;
+      margin-left: 1.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+    }
+    nav a:hover {
+      color: #e5e7eb;
+    }
+    .hero {
+      text-align: left;
+      margin-bottom: 3.5rem;
+    }
+    h1 {
+      font-family: "DM Serif Display", serif;
+      font-size: clamp(2.1rem, 4vw, 2.8rem);
+      margin-bottom: 0.8rem;
+    }
+    h1 span {
+      color: #60a5fa;
+    }
+    .lede {
+      color: #9ca3af;
+      max-width: 28rem;
+      font-size: 0.95rem;
+      margin-bottom: 1.8rem;
+    }
+    .btn {
+      display: inline-block;
+      padding: 0.7rem 1.5rem;
+      border-radius: 999px;
+      border: 1px solid #60a5fa;
+      background: #1d4ed8;
+      color: white;
+      font-size: 0.85rem;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+    }
+    .btn-secondary {
+      background: transparent;
+      border-color: #4b5563;
+      color: #e5e7eb;
+      margin-left: 0.6rem;
+    }
+    section {
+      margin-bottom: 3rem;
+    }
+    h2 {
+      font-family: "DM Serif Display", serif;
+      font-size: 1.5rem;
+      margin-bottom: 0.8rem;
+    }
+    .services-grid {
+      display: grid;
+      gap: 1.2rem;
+    }
+    @media (min-width: 700px) {
+      .services-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+    .card {
+      border-radius: 1rem;
+      border: 1px solid #1f2937;
+      padding: 1.1rem 1rem;
+      background: radial-gradient(circle at 0 0, rgba(96,165,250,0.16), #020617);
+      font-size: 0.9rem;
+    }
+    .card-title {
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+    footer {
+      border-top: 1px solid #111827;
+      padding-top: 1.2rem;
+      font-size: 0.75rem;
+      color: #6b7280;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo">
+        <img src="assets/logo-lovecrafted-digital.png"
+             alt="Love Crafted Digital logo"
+             class="logo-img">
+      </div>
+      <nav>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <h1>Simple, launch-ready site for small businesses.</h1>
+        <p class="lede">
+          A clean one-page layout that gets your business online fast—with just enough personality to feel like you.
+        </p>
+        <a href="#contact" class="btn">Book a consult</a>
+        <a href="#services" class="btn btn-secondary">View sections</a>
+      </section>
+
+      <section id="services">
+        <h2>What’s included</h2>
+        <div class="services-grid">
+          <article class="card">
+            <div class="card-title">Home section</div>
+            <p>Hero, quick overview of what you do, clear call-to-action for booking or contact.</p>
+          </article>
+          <article class="card">
+            <div class="card-title">About & Services</div>
+            <p>Short story about your brand and a simple service list with pricing or “starting at” ranges.</p>
+          </article>
+          <article class="card">
+            <div class="card-title">Contact block</div>
+            <p>Contact form or direct links to your email, phone, and social profiles.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="contact">
+        <h2>Next steps</h2>
+        <p style="color:#9ca3af; max-width:30rem; font-size:0.95rem;">
+          This demo shows how a starter build can stay simple and still look professional.
+          On your actual site, this section would have your real contact details and a quick inquiry form.
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      © <span id="year"></span> Love Crafted Digital — Starter Demo
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+
