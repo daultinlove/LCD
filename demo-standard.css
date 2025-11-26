@@ -1,96 +1,211 @@
+body {
+  margin: 0;
+  font-family: "Inter", system-ui, sans-serif;
+  background: radial-gradient(circle at top, #1e293b, #020617 60%);
+  color: #f9fafb;
+}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Standard Demo | Love Crafted Digital</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/demo-standard.css">
-</head>
-<body>
-  <div class="wrap">
-    <header>
-      <div class="logo">
-        <img src="assets/logo-lovecrafted-digital.png" alt="Love Crafted Digital" class="logo-img">
-        <span class="logo-text">Standard layout</span>
-      </div>
-      <nav>
-        <a href="#overview">Overview</a>
-        <a href="#sections">Sections</a>
-        <a href="#gallery">Gallery</a>
-        <a href="index.html">Main site</a>
-      </nav>
-    </header>
+.wrap {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 2.6rem 1.3rem 3.4rem;
+}
 
-    <main>
-      <section class="hero" id="overview">
-        <div>
-          <div class="eyebrow">Western × modern hybrid</div>
-          <h1>Structured site with a bold blue, rope-heart brand feel.</h1>
-          <p class="lede">
-            This standard layout is built for service providers, photographers, and local brands that need more than a simple one-pager—without going full custom.
-          </p>
-        </div>
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3.3rem;
+}
 
-        <aside class="hero-card">
-          <h2>Layout highlights</h2>
-          <p>
-            Clear sections for services, story, social proof, and FAQs. Western details show up in typography and accents, but the overall feel stays clean and modern.
-          </p>
-          <div class="pill-row">
-            <span class="pill gold">Multi-page</span>
-            <span class="pill">Service focused</span>
-            <span class="pill">Photo-friendly</span>
-          </div>
-        </aside>
-      </section>
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
 
-      <section id="sections">
-        <h3>Core sections in this demo</h3>
-        <div class="two-col">
-          <ul class="list">
-            <li><span class="dot"></span><span><strong>Hero & intro:</strong> clear tagline, quick description, and primary call-to-action.</span></li>
-            <li><span class="dot"></span><span><strong>Services grid:</strong> 3–6 services, each with short descriptions and “starting at” prices.</span></li>
-            <li><span class="dot"></span><span><strong>About section:</strong> your story, why you do what you do, and what makes you different.</span></li>
-            <li><span class="dot"></span><span><strong>FAQ & details:</strong> answer common questions so clients feel confident before reaching out.</span></li>
-          </ul>
-          <p class="copy">
-            On your real site, each section would be built from your actual copy, photos, and colors. This demo exists to show structure, spacing, and how the western-meets-modern style can look in practice.
-          </p>
-        </div>
-      </section>
+.logo-img {
+  height: 38px;
+  width: auto;
+  display: block;
+}
 
-      <section id="gallery">
-        <h3>Gallery & proof layout</h3>
-        <div class="gallery">
-          <article class="gallery-card">
-            <div class="tag">Gallery row</div>
-            <h4>Three-image strip</h4>
-            <p>Wide images in a row to show your work: before / after, favorite projects, or product highlights.</p>
-          </article>
-          <article class="gallery-card">
-            <div class="tag">Testimonials</div>
-            <h4>Quote cards</h4>
-            <p>Short client quotes with names and locations for social proof. Can be stacked or placed beside the gallery row.</p>
-          </article>
-          <article class="gallery-card">
-            <div class="tag">Call to action</div>
-            <h4>“Book now” strip</h4>
-            <p>A thin strip with a bold button to nudge visitors into reaching out once they’ve seen your work.</p>
-          </article>
-        </div>
-      </section>
-    </main>
+.logo-text {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: #9ca3af;
+}
 
-    <footer>
-      © <span id="year"></span> Love Crafted Digital — Standard Demo
-    </footer>
-  </div>
+nav a {
+  text-decoration: none;
+  font-size: 0.8rem;
+  color: #9ca3af;
+  margin-left: 1.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+}
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
-</body>
-</html>
+nav a:hover {
+  color: #e5e7eb;
+}
+
+.hero {
+  display: grid;
+  gap: 2.2rem;
+}
+
+@media (min-width: 900px) {
+  .hero {
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.1fr);
+    align-items: center;
+  }
+}
+
+.eyebrow {
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #9ca3af;
+  margin-bottom: 0.7rem;
+}
+
+h1 {
+  font-family: "DM Serif Display", serif;
+  font-size: clamp(2.2rem, 4vw, 3rem);
+  margin-bottom: 0.9rem;
+}
+
+.lede {
+  color: #9ca3af;
+  max-width: 32rem;
+  font-size: 0.95rem;
+}
+
+.hero-card {
+  border-radius: 1.4rem;
+  border: 1px solid #1f2937;
+  background: radial-gradient(circle at 0 0, rgba(59, 130, 246, 0.25), #020617);
+  padding: 1.4rem 1.3rem;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.9);
+  font-size: 0.9rem;
+}
+
+.hero-card h2 {
+  font-family: "DM Serif Display", serif;
+  font-size: 1.3rem;
+  margin-top: 0;
+  margin-bottom: 0.6rem;
+}
+
+.hero-card p {
+  color: #9ca3af;
+  margin-bottom: 1rem;
+}
+
+.pill-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.pill {
+  border-radius: 999px;
+  padding: 0.18rem 0.7rem;
+  border: 1px solid #4b5563;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.13em;
+  color: #9ca3af;
+}
+
+.pill.gold {
+  border-color: #fbbf24;
+  color: #fef3c7;
+}
+
+section {
+  margin-top: 3rem;
+}
+
+h3 {
+  font-family: "DM Serif Display", serif;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.two-col {
+  display: grid;
+  gap: 1.8rem;
+}
+
+@media (min-width: 900px) {
+  .two-col {
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr);
+  }
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.list li {
+  display: flex;
+  gap: 0.6rem;
+  margin-bottom: 0.9rem;
+  font-size: 0.9rem;
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: radial-gradient(circle at 30% 30%, #fbbf24, #b45309);
+  margin-top: 0.4rem;
+}
+
+.copy {
+  font-size: 0.92rem;
+  color: #9ca3af;
+}
+
+.gallery {
+  display: grid;
+  gap: 1rem;
+}
+
+.gallery-card {
+  border-radius: 1.1rem;
+  border: 1px solid #1f2937;
+  padding: 1rem 1rem;
+  background: #020617;
+  font-size: 0.9rem;
+}
+
+.tag {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: #9ca3af;
+  margin-bottom: 0.2rem;
+}
+
+.gallery-card h4 {
+  margin: 0 0 0.35rem;
+  font-size: 1rem;
+}
+
+.gallery-card p {
+  margin: 0;
+  color: #9ca3af;
+}
+
+footer {
+  border-top: 1px solid #111827;
+  margin-top: 3rem;
+  padding-top: 1.1rem;
+  font-size: 0.75rem;
+  color: #9ca3af;
+}
