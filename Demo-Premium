@@ -1,1 +1,339 @@
 
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Premium Demo | Love Crafted Digital</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: "Inter", system-ui, sans-serif;
+      background:
+        radial-gradient(circle at top left, #fbbf24 0, rgba(15,23,42,1) 45%),
+        radial-gradient(circle at bottom right, #2563eb 0, #020617 55%);
+      color: #f9fafb;
+    }
+    .overlay {
+      background: radial-gradient(circle at top, rgba(15,23,42,.85), rgba(3,7,18,.98));
+      min-height: 100vh;
+    }
+    .wrap {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 2.8rem 1.4rem 3.5rem;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 3.4rem;
+    }
+    .logo-img {
+      height: 48px;
+      width: auto;
+      display: block;
+    }
+    nav a {
+      text-decoration: none;
+      font-size: .8rem;
+      color: #e5e7eb;
+      margin-left: 1.5rem;
+      text-transform: uppercase;
+      letter-spacing: .18em;
+    }
+    nav a:hover {
+      color: #facc15;
+    }
+    .hero {
+      display: grid;
+      gap: 2.4rem;
+    }
+    @media (min-width: 900px) {
+      .hero {
+        grid-template-columns: minmax(0, 1.25fr) minmax(0, 1.1fr);
+        align-items: center;
+      }
+    }
+    .eyebrow {
+      font-size: .75rem;
+      text-transform: uppercase;
+      letter-spacing: .22em;
+      color: #facc15;
+      margin-bottom: .7rem;
+    }
+    h1 {
+      font-family: "DM Serif Display", serif;
+      font-size: clamp(2.4rem, 4.3vw, 3.3rem);
+      margin-bottom: 1rem;
+    }
+    h1 span {
+      background: linear-gradient(to right, #fbbf24, #f97316, #60a5fa);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+    .lede {
+      color: #e5e7eb;
+      max-width: 32rem;
+      font-size: .96rem;
+      margin-bottom: 1.9rem;
+    }
+    .lede strong {
+      color: #fef3c7;
+    }
+    .hero-meta {
+      font-size: .82rem;
+      color: #e5e7eb;
+      margin-top: .8rem;
+    }
+    .hero-meta span {
+      opacity: .8;
+    }
+    .btn {
+      display: inline-block;
+      padding: .8rem 1.7rem;
+      border-radius: 999px;
+      border: 1px solid rgba(250,204,21,.9);
+      background: radial-gradient(circle at 0 0, #fbbf24, #f97316);
+      color: #0f172a;
+      font-size: .82rem;
+      font-weight: 600;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: .2em;
+      box-shadow: 0 16px 40px rgba(251,191,36,.65);
+    }
+    .hero-board {
+      border-radius: 1.6rem;
+      border: 1px solid rgba(15,23,42,.95);
+      background:
+        radial-gradient(circle at 0 0, rgba(251,191,36,.35), rgba(15,23,42,.96)),
+        radial-gradient(circle at 100% 100%, rgba(37,99,235,.35), rgba(15,23,42,1));
+      padding: 1.5rem 1.4rem;
+      box-shadow: 0 22px 48px rgba(15,23,42,.95);
+      font-size: .9rem;
+    }
+    .board-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+    .board-title {
+      text-transform: uppercase;
+      letter-spacing: .22em;
+      font-size: .75rem;
+      color: #fef3c7;
+    }
+    .badge {
+      font-size: .75rem;
+      border-radius: 999px;
+      padding: .18rem .7rem;
+      border: 1px solid rgba(248,250,252,.6);
+      text-transform: uppercase;
+      letter-spacing: .15em;
+      background: rgba(15,23,42,.85);
+    }
+    .metrics {
+      display: grid;
+      gap: .7rem;
+      margin-bottom: 1rem;
+    }
+    @media (min-width: 600px) {
+      .metrics {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+    .metric {
+      border-radius: 1rem;
+      border: 1px solid rgba(15,23,42,.95);
+      background: rgba(15,23,42,.9);
+      padding: .7rem .8rem;
+    }
+    .metric-label {
+      font-size: .7rem;
+      text-transform: uppercase;
+      letter-spacing: .16em;
+      color: #e5e7eb;
+      opacity: .8;
+      margin-bottom: .2rem;
+    }
+    .metric-value {
+      font-size: 1.05rem;
+      font-weight: 600;
+    }
+    .metric-note {
+      font-size: .76rem;
+      color: #e5e7eb;
+      opacity: .85;
+      margin-top: .1rem;
+    }
+    .board-note {
+      font-size: .82rem;
+      color: #fef3c7;
+    }
+    .board-note span {
+      opacity: .8;
+    }
+    section {
+      margin-top: 3.2rem;
+    }
+    h2 {
+      font-family: "DM Serif Display", serif;
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+    }
+    .two-col {
+      display: grid;
+      gap: 1.8rem;
+    }
+    @media (min-width: 900px) {
+      .two-col {
+        grid-template-columns: minmax(0, 1.3fr) minmax(0, 1.1fr);
+      }
+    }
+    .list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .list li {
+      display: flex;
+      gap: .6rem;
+      margin-bottom: .9rem;
+      font-size: .9rem;
+    }
+    .icon {
+      width: 18px;
+      height: 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(252,211,77,.9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: .7rem;
+    }
+    .panel {
+      border-radius: 1.3rem;
+      border: 1px solid rgba(15,23,42,.95);
+      background: rgba(15,23,42,.9);
+      padding: 1.1rem 1rem;
+      font-size: .86rem;
+      color: #e5e7eb;
+    }
+    footer {
+      border-top: 1px solid rgba(15,23,42,.9);
+      margin-top: 3.3rem;
+      padding-top: 1.3rem;
+      font-size: .76rem;
+      color: #e5e7eb;
+      opacity: .8;
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay">
+    <div class="wrap">
+      <header>
+        <div class="logo">
+          <img src="assets/logo-lovecrafted-digital.png"
+               alt="Love Crafted Digital logo"
+               class="logo-img">
+        </div>
+        <nav>
+          <a href="#experience">Experience</a>
+          <a href="#brand">Brand System</a>
+          <a href="#merch">Merch Touchpoints</a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="hero" id="experience">
+          <div>
+            <div class="eyebrow">Full brand + website experience</div>
+            <h1>High-end western-modern designs that feel like a custom brand studio build.</h1>
+            <p class="lede">
+              The premium level is for brands ready to step into a full visual system:
+              <strong>custom layouts, polished storytelling, merch-ready graphics, and a website that actually feels like your brand.</strong>
+            </p>
+            <a href="index.html" class="btn">View main site</a>
+            <div class="hero-meta">
+              <span>Think: polished rope-heart logo, strong blue centerpieces, and warm gold accents throughout the experience.</span>
+            </div>
+          </div>
+
+          <aside class="hero-board">
+            <div class="board-top">
+              <div class="board-title">Sample premium project</div>
+              <div class="badge">Web + Brand + Merch</div>
+            </div>
+
+            <div class="metrics">
+              <div class="metric">
+                <div class="metric-label">Timeline</div>
+                <div class="metric-value">6–8 weeks</div>
+                <div class="metric-note">Includes strategy, design, build, and launch support.</div>
+              </div>
+              <div class="metric">
+                <div class="metric-label">Deliverables</div>
+                <div class="metric-value">Site + Brand</div>
+                <div class="metric-note">Website, logo suite, color system, and type styling.</div>
+              </div>
+              <div class="metric">
+                <div class="metric-label">Extras</div>
+                <div class="metric-value">Merch Ready</div>
+                <div class="metric-note">Mockups for shirts, hats, and sticker layouts.</div>
+              </div>
+            </div>
+
+            <div class="board-note">
+              Includes <span>platform setup, basic SEO, launch support, and a recorded walkthrough</span> so you can keep things updated without guessing.
+            </div>
+          </aside>
+        </section>
+
+        <section id="brand">
+          <h2>What the brand system can include</h2>
+          <div class="two-col">
+            <ul class="list">
+              <li>
+                <div class="icon">✓</div>
+                <span><strong>Logo suite:</strong> primary logo, secondary marks, and a simplified cattle-brand style icon.</span>
+              </li>
+              <li>
+                <div class="icon">✓</div>
+                <span><strong>Color palette:</strong> earthy neutrals with a bold blue anchor and gold accent tones.</span>
+              </li>
+              <li>
+                <div class="icon">✓</div>
+                <span><strong>Type system:</strong> serif + sans pairing that nods to western typography without going full novelty.</span>
+              </li>
+              <li>
+                <div class="icon">✓</div>
+                <span><strong>Usage guide:</strong> simple PDF that explains how to use your new visuals consistently.</span>
+              </li>
+            </ul>
+
+            <div class="panel">
+              This demo is all about <strong>vibe and structure</strong>. When we build your actual project, the content will come from your brand—
+              your story, your voice, your photos. The goal is a site and system that looks premium but still feels approachable and real.
+            </div>
+          </div>
+        </section>
+
+        <section id="merch">
+          <h2>Merch & touchpoints</h2>
+          <div class="two-col">
+            <div class="panel">
+              <p style="margin-top:0;">
+                Premium projects can include artwork ready for:
+              </p>
+              <ul class="list" style="margin-top:.75rem;">
+                <li>
+                  <div class="icon">✓</div>
+                  <span>Front and back t-shirt designs with your brand mark and tagline.</span>
+                </li>
+                <li>
+                  <div class="icon">✓</div>
+                  <span>Hat patches or embroidery-friendly versions of your logo.</span>
+
