@@ -34,6 +34,7 @@ header {
 .logo-img {
   height: 40px;
   width: auto;
+  display: block;
 }
 
 .logo-text {
@@ -229,4 +230,3 @@ footer {
   color: #e5e7eb;
   opacity: 0.85;
 }
-
