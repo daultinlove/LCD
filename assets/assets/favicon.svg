@@ -1,0 +1,17 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <rect width="512" height="512" fill="#111827"/>
+  <path d="M256 120
+           C220 80 160 92 140 140
+           C126 176 132 222 156 258
+           C180 294 216 322 256 352
+           C296 322 332 294 356 258
+           C380 222 386 176 372 140
+           C352 92 292 80 256 120Z"
+        fill="none"
+        stroke="#FBBF24"
+        stroke-width="24"
+        stroke-linecap="round"
+        stroke-linejoin="round"/>
+  <polygon points="256,260 270,295 308,295 276,317 289,352 256,331 223,352 236,317 204,295 242,295"
+           fill="#FBBF24"/>
+</svg>
