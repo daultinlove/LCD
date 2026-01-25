@@ -1,0 +1,540 @@
+/* ====== GLOBAL RESET ====== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background-color: #050608;
+  color: #f5f7fa;
+  line-height: 1.6;}
+
+body.theme-masons header {
+  background: #fff8ed;
+  border-bottom-color: #e2d1bb;}
+
+body.theme-masons .nav-logo-badge {
+  border-color: #b45309;}
+
+body.theme-masons .pricing-card,
+body.theme-masons .portfolio-card {
+  background: #fff8ed;
+  border-color: #e2d1bb;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.06);}
+
+body.theme-masons .btn-primary {
+  background: linear-gradient(135deg, #b45309, #eab308);
+  color: #2b211c;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.18);}
+
+body.theme-masons .btn-outline {
+  border-color: #d0bfa7;
+  color: #3b2f2a;
+  background: transparent;}
+
+body.theme-masons .hero-title span {
+  color: #b45309;}
+
+.masons-hero {
+  padding-top: 4rem;
+  padding-bottom: 3rem;}
+
+.masons-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 2.1fr) minmax(0, 2.2fr);
+  gap: 3rem;
+  align-items: center;}
+
+.section-divider {
+  border-top: 1px dashed rgba(107,70,36,0.35);
+  margin: 2.5rem 0 2rem;}
+
+.badge-soft {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.7rem;
+  border-radius: 999px;
+  background: rgba(180,83,9,0.08);
+  color: #7c2d12;}
+
+/* nav links on dark header */
+.moon-header .nav-links a {
+  color: #e5e7eb;}
+
+.moon-header .nav-links a::after {
+  background: linear-gradient(90deg, #f4b942, #38bdf8);}
+
+.moon-header .nav-cta {
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid rgba(58, 12, 163, 0.25);}
+
+/* HERO */
+.moon-hero {
+  position: relative;
+  padding: 4.5rem 0 3.5rem;
+  overflow: hidden;
+  background: transparent;
+  box-shadow: none;}
+
+.moon-hero-gradient {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 0% 0%, rgba(244, 185, 66, 0.15), transparent 55%),
+    radial-gradient(circle at 100% 0%, rgba(58, 12, 163, 0.45), #120420);
+  z-index: 0;}
+
+.moon-hero-inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(0, 1.3fr);
+  gap: 2.75rem;
+  align-items: stretch;}
+
+.moon-hero-copy {
+  color: #fefcf7;}
+
+/* Hero card with logo */
+.moon-hero-card {
+  background: rgba(15, 23, 42, 0.92);             /* deep navy glass */
+  border-radius: 1.5rem;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.75);
+  border: 1px solid rgba(148, 163, 184, 0.5);
+  display: grid;
+  grid-template-rows: auto 1fr;
+  overflow: hidden;
+  color: #e5e7eb;}
+
+.moon-hero-line,
+.moon-hero-meta {
+  color: #e5e7eb;}
+
+.moon-hero-card-body {
+  padding: 0.75rem 1.4rem 1.4rem;}
+
+.moon-hero-tag {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--moon-purple);
+  margin-bottom: 0.4rem;}
+
+.moon-hero-line {
+  font-size: 0.9rem;
+  margin-bottom: 0.6rem;}
+
+.moon-hero-meta {
+  font-size: 0.85rem;
+  color: #6c5333;}
+
+/* Buttons */
+.btn-primary-moon {
+  background: linear-gradient(135deg, var(--moon-purple), var(--moon-gold));
+  color: #fff;
+  padding: 0.75rem 1.6rem;
+  border-radius: 999px;
+  border: none;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.35);}
+
+.btn-outline-moon {
+  padding: 0.75rem 1.4rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  color: #fefcf7;
+  background: transparent;}
+
+/* Sections */
+.moon-section {
+  padding: 3.5rem 0;}
+
+.moon-section-dark {
+  background: radial-gradient(circle at 10% 0%, #3a0ca3, #120420);
+  color: #fdecc8;}
+
+body.theme-coach {
+  --brand-blue: #22c55e;
+  --brand-blue-dark: #15803d;
+  --brand-cream: #ecfeff;
+  --brand-brown: #0f172a;
+  --accent-gold: #38bdf8;
+  --bg-dark: #020617;
+  --bg-panel: #020617;
+  background:
+    radial-gradient(circle at 0 0, rgba(56,189,248,0.38), transparent 55%),
+    radial-gradient(circle at 100% 100%, rgba(34,197,94,0.3), transparent 55%),
+    #020617;}
+
+/* Extra flair for hero cards on demos */
+.hero-card--framed {
+  border-radius: 1.75rem;
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 24px 60px rgba(0,0,0,0.9);
+  position: relative;
+  overflow: hidden;}
+
+.hero-card--framed::before {
+  content: "";
+  position: absolute;
+  inset: -40%;
+  background: radial-gradient(circle at 0 0, rgba(255,255,255,0.06), transparent 65%);
+  opacity: 0.8;
+  pointer-events: none;}
+
+.hero-chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.7rem;}
+
+.hero-chip {
+  font-size: 0.7rem;
+  padding: 0.25rem 0.55rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.14);
+  opacity: 0.9;}
+
+/* Slightly different hero layout for restaurant/coach */
+.hero--split .hero-grid {
+  align-items: flex-start;}
+
+.hero--centered {
+  text-align: center;}
+
+.hero--centered .hero-grid {
+  display: block;}
+
+.hero--centered .hero-actions {
+  justify-content: center;}
+
+.hero--centered .hero-tagline {
+  text-align: center;}
+
+/* Optional: subtle card border difference for restaurant */
+body.theme-restaurant .pricing-card {
+  border-radius: 1.3rem;
+  border-color: rgba(250,204,21,0.25);}
+
+/* Optional: premium look for coach cards */
+body.theme-coach .pricing-card--highlight {
+  background: radial-gradient(circle at 0 0, rgba(56,189,248,0.22), transparent 60%),
+              radial-gradient(circle at 100% 100%, rgba(34,197,94,0.22), transparent 60%),
+              var(--bg-panel);}
+
+/* ====== LAYOUT ====== */
+.container {
+  width: min(1100px, 92%);
+  margin: 0 auto;}
+
+.section {
+  padding: 4rem 0;}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;}
+
+/* 🔥 navbar logo image (new) */
+.nav-logo-img {
+  height: 38px;
+  width: 38px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;}
+
+.nav-logo-badge {
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  border: 2px solid var(--accent-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 0.95rem;}
+
+.nav-links a {
+  color: #d2d6e4;
+  text-decoration: none;
+  position: relative;}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent-gold), var(--brand-blue));
+  transition: width 0.2s ease-out;}
+
+.nav-links a:hover::after {
+  width: 100%;}
+
+/* ====== BUTTONS ====== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.7rem 1.4rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.1s ease-out, box-shadow 0.1s ease-out, background 0.2s;}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--brand-blue), var(--accent-gold));
+  color: #050608;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.6);}
+
+.btn-outline {
+  border-color: var(--border-soft);
+  color: #e4e7f0;
+  background: transparent;}
+
+.btn-outline:hover {
+  background: #181b24;}
+
+/* ====== HERO ====== */
+.hero {
+  padding: 4.5rem 0 3.5rem;}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 2.5fr);
+  gap: 3rem;
+  align-items: center;}
+
+.hero-kicker {
+  text-transform: uppercase;
+  color: var(--accent-gold);
+  letter-spacing: 0.2em;
+  font-size: 0.75rem;
+  margin-bottom: 0.75rem;}
+
+.hero-title {
+  font-size: clamp(2.25rem, 4vw, 3rem);
+  line-height: 1.1;
+  margin-bottom: 1rem;}
+
+.hero-title span {
+  color: var(--brand-blue);}
+
+.hero-subtitle {
+  color: #c2c6d6;
+  max-width: 28rem;
+  margin-bottom: 1.6rem;}
+
+.hero-actions {
+  display: flex;
+  gap: 0.9rem;
+  flex-wrap: wrap;}
+
+.hero-tagline {
+  margin-top: 1.4rem;
+  font-size: 0.85rem;
+  color: #9ca3b8;}
+
+/* HERO CARD */
+.hero-card {
+  position: relative;
+  padding: 1.4rem 1.6rem;
+  background: var(--bg-panel);
+  border-radius: 1.3rem;
+  border: 1px solid var(--border-soft);}
+
+.hero-card-tag {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: #9ca3b8;
+  margin-bottom: 0.4rem;}
+
+.hero-card-title {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;}
+
+.hero-card-quote {
+  margin-top: 0.8rem;
+  font-size: 0.85rem;
+  color: #cbd0df;
+  font-style: italic;}
+
+/* ====== SECTION HEADERS ====== */
+.section-kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.75rem;
+  color: #9ca3b8;
+  margin-bottom: 0.5rem;}
+
+.section-heading {
+  font-size: 1.7rem;
+  margin-bottom: 0.5rem;}
+
+.section-subtitle {
+  color: #a1a8bc;
+  max-width: 40rem;}
+
+/* ====== PRICING CARDS ====== */
+.pricing-grid {
+  margin-top: 2.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.6rem;}
+
+.pricing-card {
+  background: var(--bg-panel);
+  border-radius: 1.1rem;
+  border: 1px solid var(--border-soft);
+  padding: 1.5rem 1.7rem 1.7rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;}
+
+.pricing-card--highlight {
+  border-color: var(--accent-gold);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.75);
+  position: relative;}
+
+.pricing-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1.3rem;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--accent-gold);}
+
+.pricing-name {
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  color: #9ca3b8;}
+
+.pricing-title {
+  font-size: 1.2rem;
+  margin-bottom: 0.1rem;}
+
+.pricing-price {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--brand-cream);}
+
+.pricing-price span {
+  font-size: 0.8rem;
+  color: #8b91a4;}
+
+.pricing-list {
+  list-style: none;
+  margin: 0.4rem 0 1rem;
+  padding: 0;}
+
+.pricing-list li {
+  font-size: 0.86rem;
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.25rem;}
+
+.pricing-list li::before {
+  content: "✓";
+  color: var(--accent-gold);
+  margin-top: 0.1rem;}
+
+/* ====== PORTFOLIO CARDS ====== */
+.portfolio-grid {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.4rem;}
+
+.portfolio-card {
+  background: var(--bg-panel);
+  border-radius: 1rem;
+  border: 1px solid var(--border-soft);
+  padding: 1.1rem 1.3rem 1.3rem;}
+
+.portfolio-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: #9ca3b8;
+  margin-bottom: 0.3rem;}
+
+@media (max-width: 800px) {
+  .hero-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .nav-links {
+    display: none; /* simple hide for now */
+  }
+}
+
+body.theme-moon .moon-header .nav-links a {
+  color: #e5e7eb;}
+
+/* Hero: let the moon + gradient feel darker & cinematic */
+body.theme-moon .moon-hero {
+  background: transparent;
+  box-shadow: none;}
+
+body.theme-moon .moon-hero-gradient {
+  background:
+    radial-gradient(circle at 0% 0%, rgba(244, 185, 66, 0.08), transparent 55%),
+    radial-gradient(circle at 100% 0%, rgba(58, 12, 163, 0.55), rgba(3, 7, 18, 0.9));}
+
+body.theme-moon .moon-subtitle,
+body.theme-moon .moon-note {
+  color: #cbd5f5;}
+
+/* Hero side card with logo should also go dark */
+body.theme-moon .moon-hero-card {
+  background: rgba(15, 23, 42, 0.92);
+  border: 1px solid rgba(148, 163, 184, 0.5);}
+
+body.theme-moon .moon-hero-meta {
+  color: #e5e7eb;}
+
+/* Sections themselves sit on transparent so the moon shows through */
+body.theme-moon .moon-section {
+  background: transparent;}
+
+.calc-nav {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.6rem;
+  margin-top: 1.6rem;}
+
+@media (max-width: 700px) {
+  .calc-wizard {
+    padding: 1.2rem;
+  }
+  .calc-nav {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}

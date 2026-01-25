@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Crocodile Comics | Comics • Manga • Graphic Novels</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Crocodile Comics — weekly drops, starter bundles, trade-ins, and events." />
+  <meta name="theme-color" content="#07110d" />
+  <link rel="icon" type="image/png" href="../assets/demos/demo-crocodile.png" />
+  <link rel="stylesheet" href="../css/demo-crocodile.css" />
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <p class="topbar-text">Weekly Drop every Friday • Trade-ins welcome • Family-friendly</p>
+      <div class="topbar-actions">
+        <a class="chip" href="demo-crocodile-events.html">Events</a>
+        <a class="chip" href="demo-crocodile-visit.html">Visit</a>
+      </div>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="demo-crocodile-comics.html" aria-label="Crocodile Comics Home">
+        <img src="../assets/demos/demo-crocodile.png" alt="Crocodile Comics logo" style="width:44px;height:44px;border-radius:12px;object-fit:cover;">
+        <span class="brand-text">
+          <span class="brand-name">Crocodile Comics</span>
+          <span class="brand-tag">Comics • Manga • Graphic Novels</span>
+        </span>
+      </a>
+
+      <nav class="nav">
+        <a class="active" href="demo-crocodile-comics.html">Home</a>
+        <a href="demo-crocodile-shop.html">Shop</a>
+        <a href="demo-crocodile-bundles.html">Bundles</a>
+        <a href="demo-crocodile-tradeins.html">Trade-Ins</a>
+        <a href="demo-crocodile-events.html">Events</a>
+        <a href="demo-crocodile-about.html">About</a>
+        <a href="demo-crocodile-visit.html">Visit</a>
+      </nav>
+
+      <div class="header-cta">
+        <button class="bag" id="bagBtn" type="button">Bag <span class="bag-count" id="bagCount">0</span></button>
+        <a class="btn primary" href="demo-crocodile-shop.html">Shop Now</a>
+        <a href="../packages.html">Back to Love Crafted</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <p class="kicker">Local shop. Big energy.</p>
+          <h1>Your next series starts here.</h1>
+          <p class="lead">
+            Weekly new drops, starter bundles for new readers, and trade-ins for store credit.
+            Reserve online and pick up in-store.
+          </p>
+          <div class="hero-actions">
+            <a class="btn primary" href="demo-crocodile-shop.html">Shop Weekly Picks</a>
+            <a class="btn ghost" href="demo-crocodile-bundles.html">Starter Bundles</a>
+          </div>
+
+          <div class="hero-badges">
+            <div class="badge"><span class="badge-title">Friday Drop</span><span class="badge-sub">New arrivals weekly</span></div>
+            <div class="badge"><span class="badge-title">Trade-Ins</span><span class="badge-sub">Store credit available</span></div>
+            <div class="badge"><span class="badge-title">Events</span><span class="badge-sub">Storytime + swap nights</span></div>
+          </div>
+        </div>
+
+        <aside class="hero-card" aria-label="Featured Picks">
+          <div class="hero-card-top">
+            <p class="mini">Featured this week</p>
+            <h3>Wyrmwood Academy</h3>
+            <p class="muted">Fantasy • Adventure • New readers welcome</p>
+          </div>
+
+          <img class="cover" src="../assets/demos/cover-wyrmwood.png" alt="Wyrmwood Academy cover">
+
+          <div class="hero-card-bottom" style="margin-top:14px;">
+            <div class="price">
+              <span class="price-now">$14</span>
+              <span class="price-was">$18</span>
+            </div>
+            <a class="btn primary" href="demo-crocodile-shop.html">View in Shop</a>
+          </div>
+        </aside>
+      </div>
+
+      <div class="hero-glow" aria-hidden="true"></div>
+    </section>
+
+    <section class="section alt">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Featured covers</h2>
+            <p class="muted">Real cover art makes the demo feel like a real store.</p>
+          </div>
+          <a class="btn ghost" href="demo-crocodile-shop.html">Browse All</a>
+        </div>
+
+        <div class="grid">
+          <article class="card">
+            <div class="thumb">
+              <span class="thumb-label">Kids</span>
+              <img class="cover" src="../assets/demos/cover-captain-bubblegum.png" alt="Captain Bubblegum cover">
+            </div>
+            <div class="card-body">
+              <h3>Captain Bubblegum</h3>
+              <p class="muted">Beginner-friendly laughs.</p>
+              <div class="card-bottom">
+                <span class="money">$9</span>
+                <button class="btn small" type="button" data-add="Captain Bubblegum Vol. 1">Add</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="thumb">
+              <span class="thumb-label">Manga</span>
+              <img class="cover" src="../assets/demos/cover-moonblade.png" alt="Moonblade cover">
+            </div>
+            <div class="card-body">
+              <h3>Moonblade</h3>
+              <p class="muted">Fast, clean action.</p>
+              <div class="card-bottom">
+                <span class="money">$12</span>
+                <button class="btn small" type="button" data-add="Moonblade: Chapter 1">Add</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="thumb">
+              <span class="thumb-label">Special</span>
+              <img class="cover" src="../assets/demos/cover-opposite-man.png" alt="Opposite Man cover">
+            </div>
+            <div class="card-body">
+              <h3>Opposite Man</h3>
+              <p class="muted">Weird in the best way.</p>
+              <div class="card-bottom">
+                <span class="money">$6</span>
+                <button class="btn small" type="button" data-add="Opposite Man #1">Add</button>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="note">
+          <p><strong>Premium demo behavior:</strong> “Add” simulates reserving items for pickup. Real builds can connect Square/Shopify/WooCommerce.</p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <div>
+          <p class="footer-title">Crocodile Comics</p>
+          <p class="muted">Premium demo storefront (sample content).</p>
+        </div>
+        <div class="footer-links">
+          <a href="demo-crocodile-shop.html">Shop</a>
+          <a href="demo-crocodile-bundles.html">Bundles</a>
+          <a href="demo-crocodile-tradeins.html">Trade-Ins</a>
+          <a href="demo-crocodile-events.html">Events</a>
+          <a href="demo-crocodile-visit.html">Visit</a>
+        </div>
+      </div>
+      <p class="footer-bottom">© <span id="year"></span> Crocodile Comics.</p>
+    </footer>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <!-- Mini cart -->
+    <div class="cart-backdrop" id="cartBackdrop" aria-hidden="true"></div>
+    <aside class="cart-drawer" id="cartDrawer" aria-label="Bag">
+      <div class="cart-head">
+        <h3>Your Bag</h3>
+        <button class="cart-close" id="cartClose" type="button" aria-label="Close">✕</button>
+      </div>
+      <div class="cart-body" id="cartBody">
+        <!-- items injected -->
+      </div>
+      <div class="cart-foot">
+        <div class="cart-total">
+          <span>Estimated total</span>
+          <strong id="cartTotal">$0</strong>
+        </div>
+        <a class="btn primary full" href="demo-crocodile-visit.html">Reserve for Pickup</a>
+        <button class="btn ghost full" id="clearCart" type="button">Clear Bag</button>
+        <p class="fineprint">Demo cart only. Real builds can do payments + inventory.</p>
+      </div>
+    </aside>
+
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // ===== Toast =====
+    const toast = document.getElementById("toast");
+    function showToast(msg){
+      toast.textContent = msg;
+      toast.classList.add("show");
+      clearTimeout(showToast._t);
+      showToast._t = setTimeout(()=>toast.classList.remove("show"), 1600);
+    }
+
+    // ===== Mini cart =====
+    const PRICES = {
+      "Captain Bubblegum Vol. 1": 9,
+      "Moonblade: Chapter 1": 12,
+      "Opposite Man #1": 6,
+      "Wyrmwood Academy": 14
+    };
+
+    const bagBtn = document.getElementById("bagBtn");
+    const bagCount = document.getElementById("bagCount");
+    const drawer = document.getElementById("cartDrawer");
+    const backdrop = document.getElementById("cartBackdrop");
+    const closeBtn = document.getElementById("cartClose");
+    const cartBody = document.getElementById("cartBody");
+    const cartTotal = document.getElementById("cartTotal");
+    const clearCart = document.getElementById("clearCart");
+
+    const state = { items: {} };
+
+    function openCart(){
+      drawer.classList.add("open");
+      backdrop.classList.add("open");
+      backdrop.setAttribute("aria-hidden","false");
+    }
+    function closeCart(){
+      drawer.classList.remove("open");
+      backdrop.classList.remove("open");
+      backdrop.setAttribute("aria-hidden","true");
+    }
+
+    function money(n){ return "$" + n.toFixed(2).replace(/\.00$/,""); }
+
+    function renderCart(){
+      const entries = Object.entries(state.items);
+      const count = entries.reduce((a,[_k,v])=>a+v,0);
+      bagCount.textContent = String(count);
+
+      cartBody.innerHTML = "";
+      if (!entries.length){
+        cartBody.innerHTML = '<div class="cart-empty">Your bag is empty. Add a few comics from the shop pages.</div>';
+        cartTotal.textContent = "$0";
+        return;
+      }
+
+      let total = 0;
+      entries.forEach(([name, qty])=>{
+        const price = PRICES[name] ?? 10;
+        total += price * qty;
+
+        const row = document.createElement("div");
+        row.className = "cart-item";
+        row.innerHTML = `
+          <div>
+            <h4>${name}</h4>
+            <p class="meta">${money(price)} each • Reserve pickup (demo)</p>
+          </div>
+          <div class="cart-actions">
+            <button class="cart-mini" data-dec="${name}" type="button" aria-label="Decrease">−</button>
+            <span class="cart-qty">${qty}</span>
+            <button class="cart-mini" data-inc="${name}" type="button" aria-label="Increase">+</button>
+          </div>
+        `;
+        cartBody.appendChild(row);
+      });
+
+      cartTotal.textContent = money(total);
+    }
+
+    function addItem(name){
+      state.items[name] = (state.items[name] || 0) + 1;
+      renderCart();
+      showToast(`Added to bag: ${name} ✅`);
+    }
+
+    function inc(name){ state.items[name] = (state.items[name]||0) + 1; renderCart(); }
+    function dec(name){
+      const q = state.items[name]||0;
+      if (q <= 1) delete state.items[name];
+      else state.items[name] = q - 1;
+      renderCart();
+    }
+
+    document.querySelectorAll("[data-add]").forEach(btn=>{
+      btn.addEventListener("click", ()=> addItem(btn.getAttribute("data-add")));
+    });
+
+    bagBtn.addEventListener("click", ()=>{
+      renderCart();
+      openCart();
+    });
+
+    closeBtn.addEventListener("click", closeCart);
+    backdrop.addEventListener("click", closeCart);
+    clearCart.addEventListener("click", ()=>{
+      state.items = {};
+      renderCart();
+      showToast("Bag cleared (demo)");
+    });
+
+    cartBody.addEventListener("click", (e)=>{
+      const t = e.target;
+      if (!(t instanceof HTMLElement)) return;
+      const incName = t.getAttribute("data-inc");
+      const decName = t.getAttribute("data-dec");
+      if (incName) inc(incName);
+      if (decName) dec(decName);
+    });
+
+    // initial
+    renderCart();
+  </script>
+</body>
+</html>

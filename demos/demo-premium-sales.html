@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Skyline Online Sales — Premium Demo | Love Crafted Digital</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Premium Skyline online sales demo: program layout, Stripe-style checkout UI, and booking-friendly flow." />
+  <link rel="stylesheet" href="/css/demo-premium.css" />
+</head>
+<body class="theme-coach">
+<header>
+  <div class="container nav">
+    <div class="nav-logo">
+      <div class="nav-logo-badge">SP</div>
+      <span>Skyline Performance Coaching</span>
+    </div>
+    <nav class="nav-links">
+      <a href="demo-premium.html">Overview</a>
+      <a href="demo-premium-brand.html">Branding</a>
+      <a href="demo-premium-sales.html">Online Sales</a>
+      <a href="demo-premium.html#packages">Programs</a>
+      <a href="demo-premium-book.html">Book</a>
+      <a href="../packages.html">Back to Love Crafted</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero hero--split">
+    <div class="container hero-grid">
+      <div>
+        <div class="hero-kicker">Online sales workflow</div>
+        <h1 class="hero-title">
+          Online booking &amp; <span>Stripe-powered checkout.</span>
+        </h1>
+        <p class="hero-subtitle">
+          This page shows how Premium projects turn coaching offers into a clean, secure online
+          sales flow with Stripe and a booking tool.
+        </p>
+        <div class="hero-actions">
+          <a href="demo-premium-book.html" class="btn btn-primary">Go to booking page</a>
+          <a href="demo-premium.html#packages" class="btn btn-outline">View programs</a>
+        </div>
+        <p class="hero-tagline">
+          Clear offers → Checkout → Calendar — all wired together so you’re not chasing DMs.
+        </p>
+      </div>
+
+      <aside class="hero-card--framed" style="padding: 1.5rem; background: var(--bg-panel);">
+        <div style="display:flex;align-items:center;gap:0.4rem;margin-bottom:0.6rem;font-size:0.8rem;">
+          <span style="font-weight:600;">Demo checkout</span>
+          <span class="hero-chip">Stripe-style UI</span>
+        </div>
+        <form>
+          <div style="display:flex;align-items:center;gap:0.4rem;margin-bottom:0.6rem;font-size:0.75rem;">
+            <span style="font-weight:600;">Powered by</span>
+            <span style="font-weight:700;letter-spacing:0.08em;">Stripe</span>
+          </div>
+
+          <label for="plan">Plan</label>
+          <select id="plan">
+            <option>Performance Track — $750 / month</option>
+            <option>Reset Session — $249 one-time</option>
+          </select>
+
+          <label for="email">Email</label>
+          <input id="email" type="email" placeholder="you@example.com" />
+
+          <label for="card">Card details</label>
+          <input id="card" type="text" placeholder="1234 1234 1234 1234" />
+
+          <label for="name">Name on card</label>
+          <input id="name" type="text" placeholder="Full name" />
+
+          <button type="button" class="btn btn-primary" style="width: 100%; margin-top: 0.6rem;">
+            Pay &amp; continue to scheduling
+          </button>
+
+          <p style="margin-top: 0.5rem; font-size: 0.75rem; color: #9ca3b8;">
+            Demo only — in a real build, this connects to your live Stripe checkout and then hands
+            off to your calendar tool to finish booking.
+          </p>
+        </form>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-kicker">Flow</div>
+      <h2 class="section-heading">From website visitor to booked client.</h2>
+      <p class="section-subtitle">
+        Premium builds are designed around a simple journey, not just pretty pages: landing →
+        reading about your offer → checking out → picking a time → getting reminders.
+      </p>
+
+      <div class="portfolio-grid">
+        <article class="portfolio-card">
+          <div class="portfolio-label">1</div>
+          <h3>Program page</h3>
+          <p>
+            The visitor lands on an overview or program page (like the main Premium overview) and
+            sees a clear headline, price, and benefits.
+          </p>
+        </article>
+
+        <article class="portfolio-card">
+          <div class="portfolio-label">2</div>
+          <h3>Checkout</h3>
+          <p>
+            A Stripe-hosted or embedded checkout handles payment securely — credit card, Apple Pay,
+            etc. Your site doesn’t touch card details.
+          </p>
+        </article>
+
+        <article class="portfolio-card">
+          <div class="portfolio-label">3</div>
+          <h3>Scheduling</h3>
+          <p>
+            After checkout, the client is sent straight to your booking page (Calendly, SavvyCal,
+            Acuity) to pick a time and get automatic reminders.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    Online Sales page of the Premium Skyline demo — shows how Stripe-style checkout and booking
+    flows fit into a multi-page site. Designed by Love Crafted Digital.
+  </div>
+</footer>
+</body>
+</html>
