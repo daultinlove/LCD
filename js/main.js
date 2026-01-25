@@ -74,15 +74,24 @@
   });
 
   /* =========================
-     CONTACT FORM (Formspree)
-     - Shows #form-status
+     FORMSPREE HANDLER (reusable)
+     - Works for both Contact + Intake
      - Redirects to thank-you.html on success
+     - Avoids paid Formspree redirect
   ========================= */
-  const form = document.querySelector("#contact-form");
-  if (form) {
-    const FORMSPREE_URL = "https://formspree.io/f/xwvvpzaj";
+  const FORMSPREE_URL = "https://formspree.io/f/xwvvpzaj";
 
-    const statusEl = document.querySelector("#form-status");
+  function bindForm({
+    formSelector,
+    statusSelector,
+    idleText,
+    sendingText,
+    redirectTo = "thank-you.html",
+  }) {
+    const form = document.querySelector(formSelector);
+    if (!form) return;
+
+    const statusEl = statusSelector ? document.querySelector(statusSelector) : null;
     const submitBtn = form.querySelector('button[type="submit"]');
 
     const showStatus = (msg, ok = true) => {
@@ -99,34 +108,25 @@
       if (!submitBtn) return;
       submitBtn.disabled = submitting;
       submitBtn.setAttribute("aria-busy", submitting ? "true" : "false");
-      submitBtn.textContent = submitting ? "Sending..." : "Send message";
+      submitBtn.textContent = submitting ? sendingText : idleText;
     };
 
     form.addEventListener("submit", async (e) => {
       e.preventDefault();
 
-      const name = form.querySelector('input[name="name"]')?.value?.trim();
-      const email = form.querySelector('input[name="email"]')?.value?.trim();
-      const message = form.querySelector('textarea[name="message"]')?.value?.trim();
-
-      if (!name || !email || !message) {
-        showStatus("Please fill out your name, email, and message.", false);
-        return;
-      }
-
       // Honeypot: if bot filled it, pretend success but do nothing
       const gotcha = form.querySelector('input[name="_gotcha"]')?.value;
       if (gotcha && gotcha.trim() !== "") {
-        window.location.href = "thank-you.html";
+        window.location.href = redirectTo;
         return;
       }
 
-      // Respect your hidden _next field if present
+      // Respect hidden _next if present, but default to thank-you.html
       const next =
-        form.querySelector('input[name="_next"]')?.value?.trim() || "thank-you.html";
+        form.querySelector('input[name="_next"]')?.value?.trim() || redirectTo;
 
       setSubmitting(true);
-      showStatus("Sending…");
+      showStatus("Sending…", true);
 
       try {
         const data = new FormData(form);
@@ -138,15 +138,14 @@
         });
 
         if (res.ok) {
-          showStatus("Message sent ✅ Redirecting…");
+          showStatus("Submitted ✅ Redirecting…", true);
           setTimeout(() => {
             window.location.href = next;
-          }, 350);
+          }, 250);
           return;
         }
 
-        let errMsg =
-          "Something went wrong. Please try again, or email me directly.";
+        let errMsg = "Something went wrong. Please try again.";
         try {
           const json = await res.json();
           if (json?.errors?.length) {
@@ -156,13 +155,28 @@
 
         showStatus(errMsg, false);
       } catch (_) {
-        showStatus(
-          "Network error. Please check your connection and try again.",
-          false
-        );
+        showStatus("Network error. Please check your connection and try again.", false);
       } finally {
         setSubmitting(false);
       }
     });
   }
+
+  // CONTACT (contact.html)
+  bindForm({
+    formSelector: "#contact-form",
+    statusSelector: "#form-status",
+    idleText: "Send message",
+    sendingText: "Sending...",
+    redirectTo: "thank-you.html",
+  });
+
+  // INTAKE (intake.html)  ✅ requires: <form id="intake-form"> and <p id="intake-status">
+  bindForm({
+    formSelector: "#intake-form",
+    statusSelector: "#intake-status",
+    idleText: "Submit intake",
+    sendingText: "Submitting...",
+    redirectTo: "thank-you.html",
+  });
 })();
