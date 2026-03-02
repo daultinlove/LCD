@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Fast, clean websites and branding for small businesses—so you look legit and get more customers." />
   <meta name="theme-color" content="#0F2A44" />
+
   <link rel="icon" type="image/png" href="assets/lcd_transparent.png"/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,9 +22,37 @@
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Small UI polish for hero CTAs (safe even if style.css already handles it) -->
+  <style>
+    .hero-actions{
+      display:flex;
+      gap:16px;
+      flex-wrap:wrap;
+      align-items:center;
+      margin-top:18px;
+    }
+    @media (max-width: 600px){
+      .hero-actions{
+        flex-direction:column;
+        align-items:stretch;
+      }
+      .hero-actions .btn{
+        width:100%;
+        justify-content:center;
+        text-align:center;
+      }
+    }
+    .btn.btn-outline{
+      background: transparent;
+      border: 1px solid rgba(255,255,255,.25);
+    }
+  </style>
 </head>
 
 <body class="home">
+
+<a href="#main" class="skip-link" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">Skip to content</a>
 
 <header class="site-header">
   <div class="container nav">
@@ -49,13 +78,11 @@
       </button>
 
       <button class="icon-btn" type="button" data-theme-toggle aria-label="Switch theme">
-        <svg class="icon" viewBox="0 0 24 24" fill="Dark" aria-hidden="true">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
           <path d="M21 12.2A8.4 8.4 0 1 1 11.8 3a6.7 6.7 0 0 0 9.2 9.2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
         </svg>
       </button>
-
-      <!-- Moved CTA out of header (now in hero) -->
-      <!-- <a class="btn btn-primary" href="contact.html">Start your project</a> -->
+      <!-- Header CTA removed. Primary CTA lives in hero now. -->
     </div>
   </div>
 </header>
@@ -78,10 +105,10 @@
           Direct process. Fast turnaround. No fluff.
         </p>
 
-        <!-- UPDATED: Hero CTAs (See Packages + Start Your Project) -->
+        <!-- UPDATED: Primary action first, packages secondary -->
         <div class="hero-actions">
-          <a class="btn" href="packages.html">See packages</a>
           <a class="btn btn-primary" href="contact.html">Start your project</a>
+          <a class="btn btn-outline" href="packages.html">See packages</a>
         </div>
 
         <p class="hint" style="margin:14px 0 0;">
@@ -108,12 +135,14 @@
       <div class="steps">
         <div class="step">
           <h3>1) Quick intake</h3>
-          <p>Tell us what you do, who you serve, and what “success” looks like. We keep it focused and efficient</p>
+          <p>Tell us what you do, who you serve, and what “success” looks like. We keep it focused and efficient.</p>
         </div>
+
         <div class="step">
           <h3>2) Build & review</h3>
-          <p>We design and build fast. You review. We refine. Nothing lauches unfinished</p>
+          <p>We design and build fast. You review. We refine. Nothing launches unfinished.</p>
         </div>
+
         <div class="step">
           <h3>3) Launch & upkeep</h3>
           <p>Your site goes live ready to work with tracking, clean SEO basics, and a simple plan to keep it current.</p>
@@ -131,13 +160,15 @@
         <div class="card">
           <h3>Websites that feel modern</h3>
           <p>Fast loading, mobile first websites designed to guide visitors toward action.</p>
-          <div class="pill">Landing pages • Multi-page sites</div>
+          <div class="pill">Landing pages • Multi page sites</div>
         </div>
+
         <div class="card">
           <h3>Branding that stays consistent</h3>
           <p>Logos, colors, and simple rules so everything you put out looks like the same business.</p>
           <div class="pill">Brand kit • Social graphics</div>
         </div>
+
         <div class="card">
           <h3>Upkeep so it doesn’t rot</h3>
           <p>Small updates, security basics, and quick changes when you need them.</p>
@@ -158,10 +189,10 @@
             <div class="price-name">Basic</div>
             <div class="price">$750 <small>+</small></div>
           </div>
-          <p class="hint">For a clean one-page site that gets you online fast.</p>
+          <p class="hint">For a clean one page site that gets you online fast.</p>
           <ul class="ul">
-            <li><span class="check"></span><span>Single-page layout</span></li>
-            <li><span class="check"></span><span>Mobile-first design</span></li>
+            <li><span class="check"></span><span>Single page layout</span></li>
+            <li><span class="check"></span><span>Mobile first design</span></li>
             <li><span class="check"></span><span>Contact form / lead capture</span></li>
           </ul>
           <a class="btn btn-primary" href="packages.html">See details</a>
@@ -173,7 +204,7 @@
             <div class="price">$1650 <small>+</small></div>
           </div>
           <h3>Typical build</h3>
-          <p class="hint">For most service businesses, multi-page + credibility.</p>
+          <p class="hint">For most service businesses, multi page plus credibility.</p>
           <ul class="ul">
             <li><span class="check"></span><span>Up to 5 pages</span></li>
             <li><span class="check"></span><span>Basic SEO setup</span></li>
@@ -185,9 +216,9 @@
         <div class="card price-card">
           <div class="price-top">
             <div class="price-name">Premium</div>
-            <div class="price">$3,200 and up <small></small></div>
+            <div class="price">$3,200 and up</div>
           </div>
-          <p class="hint">For a full brand + site built to scale.</p>
+          <p class="hint">For a full brand plus site built to scale.</p>
           <ul class="ul">
             <li><span class="check"></span><span>Custom sections + strategy</span></li>
             <li><span class="check"></span><span>Copy polish + page flow</span></li>
@@ -225,9 +256,11 @@
           <span class="name">Love Crafted Digital</span>
         </span>
       </div>
+
       <p style="color:var(--muted); max-width:70ch; margin:14px 0 0;">
         We build fast, clean websites and brand assets that help small businesses stand out and get more customers.
       </p>
+
       <p style="margin:12px 0 0;">
         <small>© 2026 Love Crafted Digital. All rights reserved.</small>
       </p>
