@@ -23,7 +23,7 @@
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
 
-  <!-- Small UI polish for hero CTAs (safe even if style.css already handles it) -->
+  <!-- Small, safe UI polish for hero + client cards (won’t break your existing css) -->
   <style>
     .hero-actions{
       display:flex;
@@ -47,12 +47,23 @@
       background: transparent;
       border: 1px solid rgba(255,255,255,.25);
     }
+    .client-card{
+      text-decoration:none;
+      transition: transform .2s ease, box-shadow .2s ease;
+      cursor:pointer;
+    }
+    .client-card:hover{
+      transform: translateY(-4px);
+      box-shadow: 0 10px 30px rgba(0,0,0,.2);
+    }
+    .client-card:focus-visible{
+      outline: 2px solid rgba(255,255,255,.35);
+      outline-offset: 4px;
+    }
   </style>
 </head>
 
 <body class="home">
-
-<a href="#main" class="skip-link" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">Skip to content</a>
 
 <header class="site-header">
   <div class="container nav">
@@ -82,7 +93,8 @@
           <path d="M21 12.2A8.4 8.4 0 1 1 11.8 3a6.7 6.7 0 0 0 9.2 9.2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
         </svg>
       </button>
-      <!-- Header CTA removed. Primary CTA lives in hero now. -->
+
+      <!-- Header CTA removed — primary CTA is in hero now -->
     </div>
   </div>
 </header>
@@ -105,9 +117,9 @@
           Direct process. Fast turnaround. No fluff.
         </p>
 
-        <!-- UPDATED: Primary action first, packages secondary -->
+        <!-- Updated CTAs -->
         <div class="hero-actions">
-          <a class="btn btn-primary" href="contact.html">Start your Site</a>
+          <a class="btn btn-primary" href="contact.html">Start your site</a>
           <a class="btn btn-outline" href="packages.html">See packages</a>
         </div>
 
@@ -126,6 +138,28 @@
     </div>
   </section>
 
+  <!-- NEW: Recent client sites -->
+  <section class="section top-line">
+    <div class="container">
+      <h2>Recent client sites</h2>
+      <p class="section-sub">Real businesses. Live websites. Built to convert.</p>
+
+      <div class="grid3" style="margin-top:28px;">
+        <a class="card client-card" href="https://jayskickashbbq.com" target="_blank" rel="noopener">
+          <h3>Jay’s KickAsh BBQ</h3>
+          <p>Restaurant website with catering intake and direct contact flow.</p>
+          <div class="pill">Food service • Catering</div>
+        </a>
+
+        <a class="card client-card" href="https://www.pshomeimprovementsllc.com" target="_blank" rel="noopener">
+          <h3>P &amp; S Home Improvements</h3>
+          <p>Multi page contractor site with service breakdown and lead capture.</p>
+          <div class="pill">Home improvement • Remodeling</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <section class="section">
     <div class="container">
       <p class="kicker">How it works</p>
@@ -139,12 +173,12 @@
         </div>
 
         <div class="step">
-          <h3>2) Build & review</h3>
+          <h3>2) Build &amp; review</h3>
           <p>We design and build fast. You review. We refine. Nothing launches unfinished.</p>
         </div>
 
         <div class="step">
-          <h3>3) Launch & upkeep</h3>
+          <h3>3) Launch &amp; upkeep</h3>
           <p>Your site goes live ready to work with tracking, clean SEO basics, and a simple plan to keep it current.</p>
         </div>
       </div>
@@ -240,7 +274,7 @@
       <h2>Ready?</h2>
       <p class="section-sub">If you’re ready for a site that works, this is the next step.</p>
       <div style="display:flex; gap:12px; flex-wrap:wrap;">
-        <a class="btn btn-primary" href="contact.html">Start your website</a>
+        <a class="btn btn-primary" href="contact.html">Start your site</a>
         <a class="btn" href="packages.html">Compare packages</a>
       </div>
     </div>
