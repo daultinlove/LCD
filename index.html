@@ -47,10 +47,12 @@
       background: transparent;
       border: 1px solid rgba(255,255,255,.25);
     }
+
     .client-card{
       text-decoration:none;
       transition: transform .2s ease, box-shadow .2s ease;
       cursor:pointer;
+      display:block;
     }
     .client-card:hover{
       transform: translateY(-4px);
@@ -59,6 +61,39 @@
     .client-card:focus-visible{
       outline: 2px solid rgba(255,255,255,.35);
       outline-offset: 4px;
+    }
+    .client-top{
+      display:flex;
+      gap:14px;
+      align-items:center;
+      margin-bottom:10px;
+    }
+    .client-logo{
+      width:56px;
+      height:56px;
+      border-radius:14px;
+      overflow:hidden;
+      flex: 0 0 auto;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.10);
+    }
+    .client-logo img{
+      width:100%;
+      height:100%;
+      object-fit:contain;
+      display:block;
+      padding:8px;
+    }
+    .client-meta h3{
+      margin:0;
+    }
+    .client-url{
+      margin-top:10px;
+      opacity:.85;
+      font-size:.95rem;
     }
   </style>
 </head>
@@ -117,7 +152,6 @@
           Direct process. Fast turnaround. No fluff.
         </p>
 
-        <!-- Updated CTAs -->
         <div class="hero-actions">
           <a class="btn btn-primary" href="contact.html">Start your site</a>
           <a class="btn btn-outline" href="packages.html">See packages</a>
@@ -138,24 +172,44 @@
     </div>
   </section>
 
-  <!-- NEW: Recent client sites -->
+  <!-- Recent client sites (logos + links) -->
   <section class="section top-line">
     <div class="container">
       <h2>Recent client sites</h2>
       <p class="section-sub">Real businesses. Live websites. Built to convert.</p>
 
       <div class="grid3" style="margin-top:28px;">
+
+        <!-- Jay's -->
         <a class="card client-card" href="https://jayskickashbbq.com" target="_blank" rel="noopener">
-          <h3>Jay’s KickAsh BBQ</h3>
-          <p>Restaurant website with catering intake and direct contact flow.</p>
+          <div class="client-top">
+            <div class="client-logo" aria-hidden="true">
+              <img src="assets/jays-logo" alt="" />
+            </div>
+            <div class="client-meta">
+              <h3>Jay’s KickAsh BBQ</h3>
+              <p class="hint" style="margin:4px 0 0;">Restaurant site with catering intake + fast contact flow.</p>
+            </div>
+          </div>
           <div class="pill">Food service • Catering</div>
+          <div class="client-url">Visit site →</div>
         </a>
 
+        <!-- P&S -->
         <a class="card client-card" href="https://www.pshomeimprovementsllc.com" target="_blank" rel="noopener">
-          <h3>P &amp; S Home Improvements</h3>
-          <p>Multi page contractor site with service breakdown and lead capture.</p>
+          <div class="client-top">
+            <div class="client-logo" aria-hidden="true">
+              <img src="assets/ps-logo" alt="" />
+            </div>
+            <div class="client-meta">
+              <h3>P &amp; S Home Improvements</h3>
+              <p class="hint" style="margin:4px 0 0;">Multi page contractor site built for trust + leads.</p>
+            </div>
+          </div>
           <div class="pill">Home improvement • Remodeling</div>
+          <div class="client-url">Visit site →</div>
         </a>
+
       </div>
     </div>
   </section>
