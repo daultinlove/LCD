@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Concrete Cost Calculator | 2026 Estimate by Sq Ft</title>
+  <meta name="description" content="Estimate concrete cost by square footage, thickness, and finish. Get a low, average, and high price range in seconds." />
+  <link rel="canonical" href="https://lovecrafteddigital.com/tools/concrete-cost-calculator.html" />
+  <style>
+    :root{ --bg:#0b1220; --card:#0f1b34; --muted:#9db0d0; --text:#e9f0ff; --line:rgba(255,255,255,.10); --accent:#67b4ff; }
+    *{box-sizing:border-box} body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;background:linear-gradient(180deg,#071028,#070b16);color:var(--text)}
+    a{color:inherit}
+    .wrap{max-width:980px;margin:0 auto;padding:28px 18px 60px}
+    .topbar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px}
+    .brand{font-weight:800;letter-spacing:.3px;text-decoration:none;opacity:.9}
+    .brand small{display:block;font-weight:600;color:var(--muted);letter-spacing:0}
+    .card{background:rgba(15,27,52,.92);border:1px solid var(--line);border-radius:18px;padding:18px}
+    h1{margin:6px 0 10px;font-size:30px;line-height:1.15}
+    .lede{color:var(--muted);margin:0 0 14px;max-width:72ch}
+    .grid{display:grid;grid-template-columns:1.15fr .85fr;gap:14px}
+    @media (max-width:900px){.grid{grid-template-columns:1fr}}
+    label{display:block;font-size:13px;color:var(--muted);margin:10px 0 6px}
+    input,select{width:100%;padding:12px 12px;border-radius:12px;border:1px solid var(--line);background:rgba(0,0,0,.20);color:var(--text);outline:none}
+    input::placeholder{color:rgba(233,240,255,.35)}
+    .row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    @media(max-width:520px){.row{grid-template-columns:1fr}}
+    .btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+    button{cursor:pointer;border:0;border-radius:12px;padding:12px 14px;font-weight:800}
+    .primary{background:var(--accent);color:#061022}
+    .ghost{background:transparent;border:1px solid var(--line);color:var(--text)}
+    .results{border-radius:16px;border:1px solid var(--line);padding:14px;background:rgba(0,0,0,.18)}
+    .kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:10px}
+    @media(max-width:700px){.kpis{grid-template-columns:1fr}}
+    .kpi{border:1px solid var(--line);border-radius:14px;padding:12px;background:rgba(255,255,255,.04)}
+    .kpi .lbl{font-size:12px;color:var(--muted)}
+    .kpi .num{font-size:22px;font-weight:900;margin-top:6px}
+    .note{color:var(--muted);font-size:12.5px;line-height:1.5;margin-top:10px}
+    .ad{margin:14px 0;border:1px dashed rgba(255,255,255,.18);border-radius:14px;padding:12px;color:rgba(233,240,255,.7);font-size:12.5px}
+    .section{margin-top:14px}
+    .section h2{margin:0 0 8px;font-size:18px}
+    details{border:1px solid var(--line);border-radius:14px;padding:10px 12px;background:rgba(255,255,255,.03);margin:8px 0}
+    summary{cursor:pointer;font-weight:800}
+    .footer{margin-top:18px;color:var(--muted);font-size:12.5px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+    .tiny-cta{color:rgba(233,240,255,.85)}
+  </style>
+
+  <!-- Optional: FAQ schema (helps SEO) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {"@type":"Question","name":"How much does concrete cost per square foot?","acceptedAnswer":{"@type":"Answer","text":"Concrete costs vary by thickness, finish, access, and labor. Most residential projects fall into a range when calculated by square footage and project details."}},
+      {"@type":"Question","name":"Does thickness change the price?","acceptedAnswer":{"@type":"Answer","text":"Yes. Thicker slabs require more material and labor, which increases total cost."}},
+      {"@type":"Question","name":"Is demolition included?","acceptedAnswer":{"@type":"Answer","text":"Demolition is often separate. This calculator includes an option to add typical demo costs."}}
+    ]
+  }
+  </script>
+</head>
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <a class="brand" href="/index.html">Love Crafted Digital <small>Tools</small></a>
+      <a class="tiny-cta" href="/contact.html">Get an exact quote</a>
+    </div>
+
+    <div class="card">
+      <h1>Concrete Cost Calculator</h1>
+      <p class="lede">Estimate a concrete project in seconds. Enter your square footage, thickness, finish type, and (optional) zip code for a simple regional adjustment.</p>
+
+      <div class="ad">Ad slot (top) — paste AdSense/your network code here later.</div>
+
+      <div class="grid">
+        <div>
+          <div class="row">
+            <div>
+              <label for="sqft">Square footage</label>
+              <input id="sqft" inputmode="decimal" placeholder="e.g., 500" />
+            </div>
+            <div>
+              <label for="thickness">Thickness (inches)</label>
+              <select id="thickness">
+                <option value="4">4" (typical patio)</option>
+                <option value="5">5"</option>
+                <option value="6">6" (driveway / heavy use)</option>
+                <option value="8">8" (extra heavy)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="row">
+            <div>
+              <label for="finish">Finish type</label>
+              <select id="finish">
+                <option value="basic">Basic / smooth</option>
+                <option value="broom">Broom finish</option>
+                <option value="stamped">Stamped concrete</option>
+                <option value="exposed">Exposed aggregate</option>
+              </select>
+            </div>
+            <div>
+              <label for="demo">Include demolition?</label>
+              <select id="demo">
+                <option value="no">No</option>
+                <option value="yes">Yes (remove old concrete)</option>
+              </select>
+            </div>
+          </div>
+
+          <label for="zip">Zip code (optional)</label>
+          <input id="zip" inputmode="numeric" placeholder="e.g., 76028" />
+
+          <div class="btns">
+            <button class="primary" id="calcBtn">Calculate</button>
+            <button class="ghost" id="resetBtn" type="button">Reset</button>
+          </div>
+
+          <p class="note">
+            Estimates are for planning only. Access, slope, rebar, pumps, permits, and site conditions can change pricing.
+          </p>
+        </div>
+
+        <div class="results" aria-live="polite">
+          <div><strong>Your estimate</strong></div>
+          <div class="kpis">
+            <div class="kpi">
+              <div class="lbl">Low estimate</div>
+              <div class="num" id="low">$—</div>
+              <div class="lbl" id="lowpsf">—</div>
+            </div>
+            <div class="kpi">
+              <div class="lbl">Average estimate</div>
+              <div class="num" id="avg">$—</div>
+              <div class="lbl" id="avgpsf">—</div>
+            </div>
+            <div class="kpi">
+              <div class="lbl">High estimate</div>
+              <div class="num" id="high">$—</div>
+              <div class="lbl" id="highpsf">—</div>
+            </div>
+          </div>
+
+          <div class="section">
+            <h2>Quick breakdown</h2>
+            <div class="note" id="breakdown">Enter details and hit calculate.</div>
+          </div>
+
+          <div class="ad">Ad slot (mid) — results area performs well for RPM.</div>
+
+          <div class="section">
+            <h2>Want an exact quote?</h2>
+            <p class="note">Drop your info and we’ll connect you with a contractor (or you can request a precise estimate).</p>
+            <!-- Swap this for Formspree/HubSpot later -->
+            <form onsubmit="event.preventDefault(); alert('Form placeholder. Connect your form handler tomorrow.');">
+              <label for="name">Name</label>
+              <input id="name" placeholder="Your name" />
+              <label for="email">Email</label>
+              <input id="email" placeholder="you@example.com" />
+              <label for="details">Project details</label>
+              <input id="details" placeholder="City, timing, any notes" />
+              <div class="btns"><button class="primary">Request exact quote</button></div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>FAQ</h2>
+        <details><summary>How much does concrete cost per square foot?</summary><div class="note">Pricing depends on thickness, finish, labor, and site conditions. Use the calculator to get a range you can plan around.</div></details>
+        <details><summary>Does thickness change the price?</summary><div class="note">Yes—thicker pours increase material and labor. 4" is common for patios; 6" is common for driveways/heavier use.</div></details>
+        <details><summary>Is demolition included?</summary><div class="note">Often it’s a separate line item. This tool lets you add a typical demo range as a starting point.</div></details>
+      </div>
+
+      <div class="footer">
+        <span>Built by Love Crafted Digital</span>
+        <span><a class="tiny-cta" href="/packages.html">For contractors: add this tool to your website</a></span>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const $ = (id) => document.getElementById(id);
+
+    // Simple regional multiplier by first digit of zip (rough heuristic).
+    // You can replace tomorrow with your BuiltQuote region logic.
+    function regionMultiplier(zip){
+      const z = (zip || "").trim();
+      if(!/^\d{5}$/.test(z)) return 1.00;
+      const first = z[0];
+      const table = {
+        "0":1.05,"1":1.03,"2":1.00,"3":0.98,"4":0.97,
+        "5":0.99,"6":1.00,"7":0.96,"8":1.02,"9":1.08
+      };
+      return table[first] ?? 1.00;
+    }
+
+    function money(n){ return n.toLocaleString(undefined,{style:"currency",currency:"USD",maximumFractionDigits:0}); }
+    function psf(n){ return `${n.toFixed(2)}/sq ft`; }
+
+    function calcConcrete(){
+      const sqft = parseFloat(($("sqft").value || "").replace(/,/g,""));
+      const thick = parseFloat($("thickness").value);
+      const finish = $("finish").value;
+      const demo = $("demo").value === "yes";
+      const zip = $("zip").value;
+
+      if(!sqft || sqft <= 0){
+        alert("Enter a valid square footage.");
+        return;
+      }
+
+      // Base labor+material per sq ft for 4" basic, BEFORE finish & thickness adjustments.
+      // Ranges are intentionally conservative (planning estimates).
+      let lowPsf = 7.5;
+      let avgPsf = 10.5;
+      let highPsf = 14.0;
+
+      // Thickness adjustment (relative to 4")
+      const thicknessFactor = thick / 4;
+      lowPsf *= thicknessFactor;
+      avgPsf *= thicknessFactor;
+      highPsf *= thicknessFactor;
+
+      // Finish multipliers
+      const finishMult = {
+        basic: 1.00,
+        broom: 1.05,
+        stamped: 1.55,
+        exposed: 1.35
+      }[finish] || 1.00;
+
+      lowPsf *= finishMult;
+      avgPsf *= finishMult;
+      highPsf *= finishMult;
+
+      // Regional adjustment (light touch)
+      const r = regionMultiplier(zip);
+      lowPsf *= r; avgPsf *= r; highPsf *= r;
+
+      // Demo add-on (typical range per sq ft)
+      const demoLow = demo ? 2.00 : 0;
+      const demoAvg = demo ? 3.00 : 0;
+      const demoHigh = demo ? 4.50 : 0;
+
+      const low = (lowPsf + demoLow) * sqft;
+      const avg = (avgPsf + demoAvg) * sqft;
+      const high = (highPsf + demoHigh) * sqft;
+
+      $("low").textContent = money(low);
+      $("avg").textContent = money(avg);
+      $("high").textContent = money(high);
+
+      $("lowpsf").textContent = psf((low / sqft));
+      $("avgpsf").textContent = psf((avg / sqft));
+      $("highpsf").textContent = psf((high / sqft));
+
+      const breakdown = [
+        `Sq ft: ${sqft.toLocaleString()}`,
+        `Thickness: ${thick}"`,
+        `Finish: ${finish}`,
+        `Regional factor: ${r.toFixed(2)}`,
+        demo ? `Includes demolition add-on.` : `No demolition included.`
+      ].join(" • ");
+
+      $("breakdown").textContent = breakdown;
+    }
+
+    $("calcBtn").addEventListener("click", calcConcrete);
+    $("resetBtn").addEventListener("click", () => {
+      ["sqft","zip","name","email","details"].forEach(id => $(id).value = "");
+      $("thickness").value = "4";
+      $("finish").value = "basic";
+      $("demo").value = "no";
+      ["low","avg","high"].forEach(id => $(id).textContent = "$—");
+      ["lowpsf","avgpsf","highpsf"].forEach(id => $(id).textContent = "—");
+      $("breakdown").textContent = "Enter details and hit calculate.";
+    });
+  </script>
+</body>
+</html>
