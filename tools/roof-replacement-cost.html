@@ -6,9 +6,11 @@
   <title>Roof Replacement Cost Estimator | 2026 Price Range</title>
   <meta name="description" content="Estimate roof replacement cost by size, material, and tear-off. Get a low, average, and high price range in seconds." />
   <link rel="canonical" href="https://lovecrafteddigital.com/tools/roof-replacement-cost.html" />
+
   <style>
     :root{ --bg:#0b1220; --card:#0f1b34; --muted:#9db0d0; --text:#e9f0ff; --line:rgba(255,255,255,.10); --accent:#67b4ff; }
-    *{box-sizing:border-box} body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;background:linear-gradient(180deg,#071028,#070b16);color:var(--text)}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;background:linear-gradient(180deg,#071028,#070b16);color:var(--text)}
     a{color:inherit}
     .wrap{max-width:980px;margin:0 auto;padding:28px 18px 60px}
     .topbar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px}
@@ -40,16 +42,17 @@
     .footer{margin-top:18px;color:var(--muted);font-size:12.5px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
     .tiny-cta{color:rgba(233,240,255,.85)}
   </style>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-4C2S3JEJS5"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-4C2S3JEJS5');
-</script>
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4C2S3JEJS5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-4C2S3JEJS5');
+  </script>
 </head>
+
 <body>
   <div class="wrap">
     <div class="topbar">
@@ -59,7 +62,7 @@
 
     <div class="card">
       <h1>Roof Replacement Cost Estimator</h1>
-      <p class="lede">Estimate roof replacement costs by roof size, material, tear-off, and story height. Zip code is optional for a simple regional adjustment.</p>
+      <p class="lede">Estimate roof replacement costs by roof size, material, tear-off, story height, and (optional) zip code.</p>
 
       <div class="ad">Ad slot (top) — paste ad code later.</div>
 
@@ -107,7 +110,7 @@
           <input id="zip" inputmode="numeric" placeholder="e.g., 76028" />
 
           <div class="btns">
-            <button class="primary" id="calcBtn">Calculate</button>
+            <button class="primary" id="calcBtn" type="button">Calculate</button>
             <button class="ghost" id="resetBtn" type="button">Reset</button>
           </div>
 
@@ -126,15 +129,45 @@
 
           <div class="ad">Ad slot (mid)</div>
 
-          <div style="margin-top:12px">
-            <strong>Want an exact quote?</strong>
-            <p class="note">We’ll connect you with a roofer or help you dial in a precise estimate.</p>
-            <form onsubmit="event.preventDefault(); alert('Form placeholder. Connect handler tomorrow.');">
-              <label for="email">Email</label>
-              <input id="email" placeholder="you@example.com" />
-              <label for="city">City / notes</label>
-              <input id="city" placeholder="City, timing, material preference" />
-              <div class="btns"><button class="primary">Request exact quote</button></div>
+          <div class="section" style="margin-top:12px;">
+            <h2>Want an exact quote?</h2>
+            <p class="note">Drop your info and we’ll connect you with a roofer (or help you dial in a precise estimate).</p>
+
+            <form id="quoteForm" action="https://formspree.io/f/mnjbkovw" method="POST">
+              <input type="hidden" name="source_page" value="Roof Replacement Estimator" />
+              <input type="hidden" name="estimate_low" id="lead_low" value="" />
+              <input type="hidden" name="estimate_avg" id="lead_avg" value="" />
+              <input type="hidden" name="estimate_high" id="lead_high" value="" />
+
+              <label for="lead_name">Name</label>
+              <input id="lead_name" name="name" placeholder="Your name" required />
+
+              <label for="lead_phone">Phone</label>
+              <input id="lead_phone" name="phone" inputmode="tel" placeholder="(555) 555-5555" required />
+
+              <label for="lead_email">Email</label>
+              <input id="lead_email" name="email" inputmode="email" placeholder="you@example.com" required />
+
+              <label for="lead_zip">ZIP / City</label>
+              <input id="lead_zip" name="zip_city" placeholder="76028 / Burleson" required />
+
+              <label for="lead_timeline">Timeline</label>
+              <select id="lead_timeline" name="timeline" required>
+                <option value="" selected disabled>Select one</option>
+                <option>ASAP (0–7 days)</option>
+                <option>2–4 weeks</option>
+                <option>1–3 months</option>
+                <option>Just researching</option>
+              </select>
+
+              <label for="lead_notes">Project details</label>
+              <input id="lead_notes" name="notes" placeholder="Material, roof size, timing, etc." />
+
+              <div class="btns">
+                <button class="primary" type="submit">Request exact quote</button>
+              </div>
+
+              <p class="note" id="quoteStatus" style="margin-top:10px;"></p>
             </form>
           </div>
         </div>
@@ -156,6 +189,7 @@
 
   <script>
     const $ = (id) => document.getElementById(id);
+
     function regionMultiplier(zip){
       const z = (zip || "").trim();
       if(!/^\d{5}$/.test(z)) return 1.00;
@@ -165,6 +199,15 @@
     }
     function money(n){ return n.toLocaleString(undefined,{style:"currency",currency:"USD",maximumFractionDigits:0}); }
 
+    function setLeadEstimates(low, avg, high){
+      const l = $("lead_low"), a = $("lead_avg"), h = $("lead_high");
+      if (l && a && h) {
+        l.value = Math.round(low).toString();
+        a.value = Math.round(avg).toString();
+        h.value = Math.round(high).toString();
+      }
+    }
+
     function calcRoof(){
       const mode = $("mode").value;
       const size = parseFloat(($("size").value || "").replace(/,/g,""));
@@ -173,29 +216,21 @@
       const tearoff = $("tearoff").value === "yes";
       const zip = $("zip").value;
 
-      if(!size || size <= 0){ alert("Enter a valid roof size."); return; }
+      if(!size || size <= 0){ alert("Enter a valid roof size."); return null; }
 
       const squares = mode === "sqft" ? (size / 100) : size;
 
-      // Base per-square ranges (asphalt) - planning ranges
-      let lowPS = 350;
-      let avgPS = 520;
-      let highPS = 750;
-
-      // Material multipliers
+      let lowPS = 350, avgPS = 520, highPS = 750; // asphalt planning range per square
       const matMult = { asphalt:1.00, metal:1.55, tile:2.20 }[material] || 1.00;
       lowPS *= matMult; avgPS *= matMult; highPS *= matMult;
 
-      // Story multiplier
       const storyMult = (height === "2") ? 1.10 : 1.00;
       lowPS *= storyMult; avgPS *= storyMult; highPS *= storyMult;
 
-      // Tear-off add-on per square
       const tearLow = tearoff ? 70 : 0;
       const tearAvg = tearoff ? 110 : 0;
       const tearHigh = tearoff ? 160 : 0;
 
-      // Region factor
       const r = regionMultiplier(zip);
       lowPS = (lowPS + tearLow) * r;
       avgPS = (avgPS + tearAvg) * r;
@@ -215,20 +250,66 @@
 
       $("breakdown").textContent =
         `Roof size: ${squares.toFixed(1)} squares • Material: ${material} • Stories: ${height} • Tear-off: ${tearoff ? "yes" : "no"} • Regional factor: ${r.toFixed(2)}`;
+
+      setLeadEstimates(low, avg, high);
+      return { low, avg, high };
     }
 
-    $("calcBtn").addEventListener("click", calcRoof);
+    $("calcBtn").addEventListener("click", () => {
+      const res = calcRoof();
+      if (res && typeof gtag === "function") {
+        gtag("event", "calculator_used", { tool: "roof_calculator" });
+      }
+    });
+
     $("resetBtn").addEventListener("click", () => {
+      ["size","zip","lead_name","lead_phone","lead_email","lead_zip","lead_notes"].forEach(id => {
+        const el = $(id);
+        if (el) el.value = "";
+      });
+      const t = $("lead_timeline");
+      if (t) t.selectedIndex = 0;
+
       $("mode").value = "squares";
-      $("size").value = "";
       $("material").value = "asphalt";
       $("height").value = "1";
       $("tearoff").value = "yes";
-      $("zip").value = "";
+
       ["low","avg","high"].forEach(id => $(id).textContent = "$—");
       ["lowps","avgps","highps"].forEach(id => $(id).textContent = "—");
       $("breakdown").textContent = "Enter details and calculate.";
+      if ($("quoteStatus")) $("quoteStatus").textContent = "";
+      setLeadEstimates("", "", "");
     });
+
+    const quoteForm = $("quoteForm");
+    const quoteStatus = $("quoteStatus");
+    if (quoteForm) {
+      quoteForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        if (quoteStatus) quoteStatus.textContent = "Sending…";
+
+        try {
+          const res = await fetch(quoteForm.action, {
+            method: "POST",
+            body: new FormData(quoteForm),
+            headers: { "Accept": "application/json" }
+          });
+
+          if (res.ok) {
+            if (typeof gtag === "function") {
+              gtag("event", "lead_submitted", { tool: "roof_calculator" });
+            }
+            if (quoteStatus) quoteStatus.textContent = "✅ Request received. We’ll reach out shortly.";
+            quoteForm.reset();
+          } else {
+            if (quoteStatus) quoteStatus.textContent = "⚠️ Something went wrong. Try again in a minute.";
+          }
+        } catch {
+          if (quoteStatus) quoteStatus.textContent = "⚠️ Network error. Please try again.";
+        }
+      });
+    }
   </script>
 </body>
 </html>
