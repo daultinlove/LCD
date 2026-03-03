@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Roof Replacement Cost Estimator | 2026 Price Range</title>
+  <meta name="description" content="Estimate roof replacement cost by size, material, and tear-off. Get a low, average, and high price range in seconds." />
+  <link rel="canonical" href="https://lovecrafteddigital.com/tools/roof-replacement-cost.html" />
+  <style>
+    :root{ --bg:#0b1220; --card:#0f1b34; --muted:#9db0d0; --text:#e9f0ff; --line:rgba(255,255,255,.10); --accent:#67b4ff; }
+    *{box-sizing:border-box} body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;background:linear-gradient(180deg,#071028,#070b16);color:var(--text)}
+    a{color:inherit}
+    .wrap{max-width:980px;margin:0 auto;padding:28px 18px 60px}
+    .topbar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px}
+    .brand{font-weight:800;letter-spacing:.3px;text-decoration:none;opacity:.9}
+    .brand small{display:block;font-weight:600;color:var(--muted)}
+    .card{background:rgba(15,27,52,.92);border:1px solid var(--line);border-radius:18px;padding:18px}
+    h1{margin:6px 0 10px;font-size:30px;line-height:1.15}
+    .lede{color:var(--muted);margin:0 0 14px;max-width:72ch}
+    .grid{display:grid;grid-template-columns:1.15fr .85fr;gap:14px}
+    @media (max-width:900px){.grid{grid-template-columns:1fr}}
+    label{display:block;font-size:13px;color:var(--muted);margin:10px 0 6px}
+    input,select{width:100%;padding:12px 12px;border-radius:12px;border:1px solid var(--line);background:rgba(0,0,0,.20);color:var(--text);outline:none}
+    .row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    @media(max-width:520px){.row{grid-template-columns:1fr}}
+    .btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+    button{cursor:pointer;border:0;border-radius:12px;padding:12px 14px;font-weight:800}
+    .primary{background:var(--accent);color:#061022}
+    .ghost{background:transparent;border:1px solid var(--line);color:var(--text)}
+    .results{border-radius:16px;border:1px solid var(--line);padding:14px;background:rgba(0,0,0,.18)}
+    .kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:10px}
+    @media(max-width:700px){.kpis{grid-template-columns:1fr}}
+    .kpi{border:1px solid var(--line);border-radius:14px;padding:12px;background:rgba(255,255,255,.04)}
+    .kpi .lbl{font-size:12px;color:var(--muted)}
+    .kpi .num{font-size:22px;font-weight:900;margin-top:6px}
+    .note{color:var(--muted);font-size:12.5px;line-height:1.5;margin-top:10px}
+    .ad{margin:14px 0;border:1px dashed rgba(255,255,255,.18);border-radius:14px;padding:12px;color:rgba(233,240,255,.7);font-size:12.5px}
+    details{border:1px solid var(--line);border-radius:14px;padding:10px 12px;background:rgba(255,255,255,.03);margin:8px 0}
+    summary{cursor:pointer;font-weight:800}
+    .footer{margin-top:18px;color:var(--muted);font-size:12.5px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+    .tiny-cta{color:rgba(233,240,255,.85)}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <a class="brand" href="/index.html">Love Crafted Digital <small>Tools</small></a>
+      <a class="tiny-cta" href="/contact.html">Get an exact quote</a>
+    </div>
+
+    <div class="card">
+      <h1>Roof Replacement Cost Estimator</h1>
+      <p class="lede">Estimate roof replacement costs by roof size, material, tear-off, and story height. Zip code is optional for a simple regional adjustment.</p>
+
+      <div class="ad">Ad slot (top) — paste ad code later.</div>
+
+      <div class="grid">
+        <div>
+          <label for="mode">Enter roof size as…</label>
+          <select id="mode">
+            <option value="squares">Squares (1 square = 100 sq ft)</option>
+            <option value="sqft">Square footage</option>
+          </select>
+
+          <div class="row">
+            <div>
+              <label for="size">Roof size</label>
+              <input id="size" inputmode="decimal" placeholder="e.g., 25 squares" />
+            </div>
+            <div>
+              <label for="material">Material</label>
+              <select id="material">
+                <option value="asphalt">Asphalt shingles</option>
+                <option value="metal">Metal</option>
+                <option value="tile">Tile</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="row">
+            <div>
+              <label for="height">Stories</label>
+              <select id="height">
+                <option value="1">1 story</option>
+                <option value="2">2+ stories</option>
+              </select>
+            </div>
+            <div>
+              <label for="tearoff">Include tear-off?</label>
+              <select id="tearoff">
+                <option value="yes">Yes (remove old roof)</option>
+                <option value="no">No (overlay where allowed)</option>
+              </select>
+            </div>
+          </div>
+
+          <label for="zip">Zip code (optional)</label>
+          <input id="zip" inputmode="numeric" placeholder="e.g., 76028" />
+
+          <div class="btns">
+            <button class="primary" id="calcBtn">Calculate</button>
+            <button class="ghost" id="resetBtn" type="button">Reset</button>
+          </div>
+
+          <p class="note">Estimates are for planning. Roof pitch, decking repairs, ventilation, and disposal can change pricing.</p>
+        </div>
+
+        <div class="results" aria-live="polite">
+          <div><strong>Your estimate</strong></div>
+          <div class="kpis">
+            <div class="kpi"><div class="lbl">Low</div><div class="num" id="low">$—</div><div class="lbl" id="lowps">—</div></div>
+            <div class="kpi"><div class="lbl">Average</div><div class="num" id="avg">$—</div><div class="lbl" id="avgps">—</div></div>
+            <div class="kpi"><div class="lbl">High</div><div class="num" id="high">$—</div><div class="lbl" id="highps">—</div></div>
+          </div>
+
+          <div class="note" id="breakdown" style="margin-top:10px;">Enter details and calculate.</div>
+
+          <div class="ad">Ad slot (mid)</div>
+
+          <div style="margin-top:12px">
+            <strong>Want an exact quote?</strong>
+            <p class="note">We’ll connect you with a roofer or help you dial in a precise estimate.</p>
+            <form onsubmit="event.preventDefault(); alert('Form placeholder. Connect handler tomorrow.');">
+              <label for="email">Email</label>
+              <input id="email" placeholder="you@example.com" />
+              <label for="city">City / notes</label>
+              <input id="city" placeholder="City, timing, material preference" />
+              <div class="btns"><button class="primary">Request exact quote</button></div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top:14px">
+        <strong>FAQ</strong>
+        <details><summary>What is a roofing “square”?</summary><div class="note">A roofing square is 100 square feet of roof area.</div></details>
+        <details><summary>Does tear-off increase cost?</summary><div class="note">Usually yes, because it adds labor and disposal.</div></details>
+        <details><summary>Why does story height matter?</summary><div class="note">More stories can increase labor, safety requirements, and setup time.</div></details>
+      </div>
+
+      <div class="footer">
+        <span>Built by Love Crafted Digital</span>
+        <span><a class="tiny-cta" href="/packages.html">For contractors: add this tool to your website</a></span>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const $ = (id) => document.getElementById(id);
+    function regionMultiplier(zip){
+      const z = (zip || "").trim();
+      if(!/^\d{5}$/.test(z)) return 1.00;
+      const first = z[0];
+      const table = {"0":1.05,"1":1.03,"2":1.00,"3":0.98,"4":0.97,"5":0.99,"6":1.00,"7":0.96,"8":1.02,"9":1.08};
+      return table[first] ?? 1.00;
+    }
+    function money(n){ return n.toLocaleString(undefined,{style:"currency",currency:"USD",maximumFractionDigits:0}); }
+
+    function calcRoof(){
+      const mode = $("mode").value;
+      const size = parseFloat(($("size").value || "").replace(/,/g,""));
+      const material = $("material").value;
+      const height = $("height").value;
+      const tearoff = $("tearoff").value === "yes";
+      const zip = $("zip").value;
+
+      if(!size || size <= 0){ alert("Enter a valid roof size."); return; }
+
+      const squares = mode === "sqft" ? (size / 100) : size;
+
+      // Base per-square ranges (asphalt) - planning ranges
+      let lowPS = 350;
+      let avgPS = 520;
+      let highPS = 750;
+
+      // Material multipliers
+      const matMult = { asphalt:1.00, metal:1.55, tile:2.20 }[material] || 1.00;
+      lowPS *= matMult; avgPS *= matMult; highPS *= matMult;
+
+      // Story multiplier
+      const storyMult = (height === "2") ? 1.10 : 1.00;
+      lowPS *= storyMult; avgPS *= storyMult; highPS *= storyMult;
+
+      // Tear-off add-on per square
+      const tearLow = tearoff ? 70 : 0;
+      const tearAvg = tearoff ? 110 : 0;
+      const tearHigh = tearoff ? 160 : 0;
+
+      // Region factor
+      const r = regionMultiplier(zip);
+      lowPS = (lowPS + tearLow) * r;
+      avgPS = (avgPS + tearAvg) * r;
+      highPS = (highPS + tearHigh) * r;
+
+      const low = lowPS * squares;
+      const avg = avgPS * squares;
+      const high = highPS * squares;
+
+      $("low").textContent = money(low);
+      $("avg").textContent = money(avg);
+      $("high").textContent = money(high);
+
+      $("lowps").textContent = `${money(lowPS)}/square`;
+      $("avgps").textContent = `${money(avgPS)}/square`;
+      $("highps").textContent = `${money(highPS)}/square`;
+
+      $("breakdown").textContent =
+        `Roof size: ${squares.toFixed(1)} squares • Material: ${material} • Stories: ${height} • Tear-off: ${tearoff ? "yes" : "no"} • Regional factor: ${r.toFixed(2)}`;
+    }
+
+    $("calcBtn").addEventListener("click", calcRoof);
+    $("resetBtn").addEventListener("click", () => {
+      $("mode").value = "squares";
+      $("size").value = "";
+      $("material").value = "asphalt";
+      $("height").value = "1";
+      $("tearoff").value = "yes";
+      $("zip").value = "";
+      ["low","avg","high"].forEach(id => $(id).textContent = "$—");
+      ["lowps","avgps","highps"].forEach(id => $(id).textContent = "—");
+      $("breakdown").textContent = "Enter details and calculate.";
+    });
+  </script>
+</body>
+</html>
