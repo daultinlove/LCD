@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Fence Cost Calculator | 2026 Estimate by Linear Foot</title>
+  <meta name="description" content="Estimate fence cost by linear feet, height, material, and gates. Get a low, average, and high price range in seconds." />
+  <link rel="canonical" href="https://lovecrafteddigital.com/tools/fence-cost-calculator.html" />
+  <style>
+    :root{ --bg:#0b1220; --card:#0f1b34; --muted:#9db0d0; --text:#e9f0ff; --line:rgba(255,255,255,.10); --accent:#67b4ff; }
+    *{box-sizing:border-box} body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;background:linear-gradient(180deg,#071028,#070b16);color:var(--text)}
+    a{color:inherit}
+    .wrap{max-width:980px;margin:0 auto;padding:28px 18px 60px}
+    .topbar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px}
+    .brand{font-weight:800;letter-spacing:.3px;text-decoration:none;opacity:.9}
+    .brand small{display:block;font-weight:600;color:var(--muted)}
+    .card{background:rgba(15,27,52,.92);border:1px solid var(--line);border-radius:18px;padding:18px}
+    h1{margin:6px 0 10px;font-size:30px;line-height:1.15}
+    .lede{color:var(--muted);margin:0 0 14px;max-width:72ch}
+    .grid{display:grid;grid-template-columns:1.15fr .85fr;gap:14px}
+    @media (max-width:900px){.grid{grid-template-columns:1fr}}
+    label{display:block;font-size:13px;color:var(--muted);margin:10px 0 6px}
+    input,select{width:100%;padding:12px 12px;border-radius:12px;border:1px solid var(--line);background:rgba(0,0,0,.20);color:var(--text);outline:none}
+    .row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    @media(max-width:520px){.row{grid-template-columns:1fr}}
+    .btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+    button{cursor:pointer;border:0;border-radius:12px;padding:12px 14px;font-weight:800}
+    .primary{background:var(--accent);color:#061022}
+    .ghost{background:transparent;border:1px solid var(--line);color:var(--text)}
+    .results{border-radius:16px;border:1px solid var(--line);padding:14px;background:rgba(0,0,0,.18)}
+    .kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:10px}
+    @media(max-width:700px){.kpis{grid-template-columns:1fr}}
+    .kpi{border:1px solid var(--line);border-radius:14px;padding:12px;background:rgba(255,255,255,.04)}
+    .kpi .lbl{font-size:12px;color:var(--muted)}
+    .kpi .num{font-size:22px;font-weight:900;margin-top:6px}
+    .note{color:var(--muted);font-size:12.5px;line-height:1.5;margin-top:10px}
+    .ad{margin:14px 0;border:1px dashed rgba(255,255,255,.18);border-radius:14px;padding:12px;color:rgba(233,240,255,.7);font-size:12.5px}
+    details{border:1px solid var(--line);border-radius:14px;padding:10px 12px;background:rgba(255,255,255,.03);margin:8px 0}
+    summary{cursor:pointer;font-weight:800}
+    .footer{margin-top:18px;color:var(--muted);font-size:12.5px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+    .tiny-cta{color:rgba(233,240,255,.85)}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <a class="brand" href="/index.html">Love Crafted Digital <small>Tools</small></a>
+      <a class="tiny-cta" href="/contact.html">Get an exact quote</a>
+    </div>
+
+    <div class="card">
+      <h1>Fence Cost Calculator</h1>
+      <p class="lede">Estimate fence cost by linear feet, height, material, number of gates, and (optional) zip code.</p>
+
+      <div class="ad">Ad slot (top)</div>
+
+      <div class="grid">
+        <div>
+          <div class="row">
+            <div>
+              <label for="feet">Length (linear feet)</label>
+              <input id="feet" inputmode="decimal" placeholder="e.g., 200" />
+            </div>
+            <div>
+              <label for="height">Fence height</label>
+              <select id="height">
+                <option value="4">4 ft</option>
+                <option value="6" selected>6 ft</option>
+                <option value="8">8 ft</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="row">
+            <div>
+              <label for="material">Material</label>
+              <select id="material">
+                <option value="wood">Wood</option>
+                <option value="chain">Chain link</option>
+                <option value="vinyl">Vinyl</option>
+                <option value="iron">Wrought iron</option>
+              </select>
+            </div>
+            <div>
+              <label for="gates">Gates (count)</label>
+              <input id="gates" inputmode="numeric" placeholder="e.g., 1" />
+            </div>
+          </div>
+
+          <div class="row">
+            <div>
+              <label for="remove">Remove old fence?</label>
+              <select id="remove">
+                <option value="no">No</option>
+                <option value="yes">Yes</option>
+              </select>
+            </div>
+            <div>
+              <label for="zip">Zip code (optional)</label>
+              <input id="zip" inputmode="numeric" placeholder="e.g., 76028" />
+            </div>
+          </div>
+
+          <div class="btns">
+            <button class="primary" id="calcBtn">Calculate</button>
+            <button class="ghost" id="resetBtn" type="button">Reset</button>
+          </div>
+
+          <p class="note">Planning estimate only. Corners, terrain, staining, permits, and HOA requirements may change pricing.</p>
+        </div>
+
+        <div class="results" aria-live="polite">
+          <div><strong>Your estimate</strong></div>
+          <div class="kpis">
+            <div class="kpi"><div class="lbl">Low</div><div class="num" id="low">$—</div><div class="lbl" id="lowplf">—</div></div>
+            <div class="kpi"><div class="lbl">Average</div><div class="num" id="avg">$—</div><div class="lbl" id="avgplf">—</div></div>
+            <div class="kpi"><div class="lbl">High</div><div class="num" id="high">$—</div><div class="lbl" id="highplf">—</div></div>
+          </div>
+
+          <div class="note" id="breakdown" style="margin-top:10px;">Enter details and calculate.</div>
+
+          <div class="ad">Ad slot (mid)</div>
+
+          <div style="margin-top:12px">
+            <strong>Want an exact quote?</strong>
+            <p class="note">We’ll connect you with a fence contractor or help dial in a precise estimate.</p>
+            <form onsubmit="event.preventDefault(); alert('Form placeholder. Connect handler tomorrow.');">
+              <label for="email">Email</label>
+              <input id="email" placeholder="you@example.com" />
+              <label for="notes">Notes</label>
+              <input id="notes" placeholder="City, material preference, timeline" />
+              <div class="btns"><button class="primary">Request exact quote</button></div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top:14px">
+        <strong>FAQ</strong>
+        <details><summary>How much does a fence cost per linear foot?</summary><div class="note">It depends on material, height, gates, and site conditions. This tool returns a low/avg/high range to plan around.</div></details>
+        <details><summary>Do gates increase the total cost?</summary><div class="note">Yes—gates add hardware and labor. This calculator adds a per-gate allowance.</div></details>
+        <details><summary>Does removing an old fence cost extra?</summary><div class="note">Often yes. Removal and disposal is usually a separate line item.</div></details>
+      </div>
+
+      <div class="footer">
+        <span>Built by Love Crafted Digital</span>
+        <span><a class="tiny-cta" href="/packages.html">For contractors: add this tool to your website</a></span>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const $ = (id) => document.getElementById(id);
+    function regionMultiplier(zip){
+      const z = (zip || "").trim();
+      if(!/^\d{5}$/.test(z)) return 1.00;
+      const first = z[0];
+      const table = {"0":1.05,"1":1.03,"2":1.00,"3":0.98,"4":0.97,"5":0.99,"6":1.00,"7":0.96,"8":1.02,"9":1.08};
+      return table[first] ?? 1.00;
+    }
+    function money(n){ return n.toLocaleString(undefined,{style:"currency",currency:"USD",maximumFractionDigits:0}); }
+
+    function calcFence(){
+      const feet = parseFloat(($("feet").value || "").replace(/,/g,""));
+      const height = parseFloat($("height").value);
+      const material = $("material").value;
+      const gates = parseInt($("gates").value || "0", 10) || 0;
+      const remove = $("remove").value === "yes";
+      const zip = $("zip").value;
+
+      if(!feet || feet <= 0){ alert("Enter a valid linear footage."); return; }
+
+      // Base per-linear-foot ranges for 6ft wood (planning ranges)
+      let lowPLF = 18;
+      let avgPLF = 28;
+      let highPLF = 40;
+
+      // Material multipliers
+      const matMult = { wood:1.00, chain:0.80, vinyl:1.35, iron:2.10 }[material] || 1.00;
+      lowPLF *= matMult; avgPLF *= matMult; highPLF *= matMult;
+
+      // Height multiplier (relative to 6ft)
+      const heightMult = (height === 4) ? 0.85 : (height === 8 ? 1.25 : 1.00);
+      lowPLF *= heightMult; avgPLF *= heightMult; highPLF *= heightMult;
+
+      // Gates add-on (each)
+      const gateLow = 250, gateAvg = 450, gateHigh = 800;
+
+      // Removal add-on per linear foot
+      const remLow = remove ? 3 : 0;
+      const remAvg = remove ? 5 : 0;
+      const remHigh = remove ? 8 : 0;
+
+      const r = regionMultiplier(zip);
+      lowPLF *= r; avgPLF *= r; highPLF *= r;
+
+      const low = (lowPLF + remLow) * feet + (gateLow * gates);
+      const avg = (avgPLF + remAvg) * feet + (gateAvg * gates);
+      const high = (highPLF + remHigh) * feet + (gateHigh * gates);
+
+      $("low").textContent = money(low);
+      $("avg").textContent = money(avg);
+      $("high").textContent = money(high);
+
+      $("lowplf").textContent = `${money(lowPLF)}/ft`;
+      $("avgplf").textContent = `${money(avgPLF)}/ft`;
+      $("highplf").textContent = `${money(highPLF)}/ft`;
+
+      $("breakdown").textContent =
+        `Length: ${feet.toLocaleString()} ft • Height: ${height} ft • Material: ${material} • Gates: ${gates} • Remove old: ${remove ? "yes" : "no"} • Regional factor: ${r.toFixed(2)}`;
+    }
+
+    $("calcBtn").addEventListener("click", calcFence);
+    $("resetBtn").addEventListener("click", () => {
+      ["feet","gates","zip","email","notes"].forEach(id => $(id).value = "");
+      $("height").value = "6";
+      $("material").value = "wood";
+      $("remove").value = "no";
+      ["low","avg","high"].forEach(id => $(id).textContent = "$—");
+      ["lowplf","avgplf","highplf"].forEach(id => $(id).textContent = "—");
+      $("breakdown").textContent = "Enter details and calculate.";
+    });
+  </script>
+</body>
+</html>
