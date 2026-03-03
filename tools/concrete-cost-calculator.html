@@ -6,9 +6,11 @@
   <title>Concrete Cost Calculator | 2026 Estimate by Sq Ft</title>
   <meta name="description" content="Estimate concrete cost by square footage, thickness, and finish. Get a low, average, and high price range in seconds." />
   <link rel="canonical" href="https://lovecrafteddigital.com/tools/concrete-cost-calculator.html" />
+
   <style>
     :root{ --bg:#0b1220; --card:#0f1b34; --muted:#9db0d0; --text:#e9f0ff; --line:rgba(255,255,255,.10); --accent:#67b4ff; }
-    *{box-sizing:border-box} body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;background:linear-gradient(180deg,#071028,#070b16);color:var(--text)}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;background:linear-gradient(180deg,#071028,#070b16);color:var(--text)}
     a{color:inherit}
     .wrap{max-width:980px;margin:0 auto;padding:28px 18px 60px}
     .topbar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px}
@@ -44,7 +46,6 @@
     .tiny-cta{color:rgba(233,240,255,.85)}
   </style>
 
-  <!-- Optional: FAQ schema (helps SEO) -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -56,16 +57,17 @@
     ]
   }
   </script>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-4C2S3JEJS5"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-4C2S3JEJS5');
-</script>
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4C2S3JEJS5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-4C2S3JEJS5');
+  </script>
 </head>
+
 <body>
   <div class="wrap">
     <div class="topbar">
@@ -120,7 +122,7 @@
           <input id="zip" inputmode="numeric" placeholder="e.g., 76028" />
 
           <div class="btns">
-            <button class="primary" id="calcBtn">Calculate</button>
+            <button class="primary" id="calcBtn" type="button">Calculate</button>
             <button class="ghost" id="resetBtn" type="button">Reset</button>
           </div>
 
@@ -159,15 +161,42 @@
           <div class="section">
             <h2>Want an exact quote?</h2>
             <p class="note">Drop your info and we’ll connect you with a contractor (or you can request a precise estimate).</p>
-            <!-- Swap this for Formspree/HubSpot later -->
-            <form onsubmit="event.preventDefault(); alert('Form placeholder. Connect your form handler tomorrow.');">
-              <label for="name">Name</label>
-              <input id="name" placeholder="Your name" />
-              <label for="email">Email</label>
-              <input id="email" placeholder="you@example.com" />
-              <label for="details">Project details</label>
-              <input id="details" placeholder="City, timing, any notes" />
-              <div class="btns"><button class="primary">Request exact quote</button></div>
+
+            <form id="quoteForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+              <input type="hidden" name="source_page" value="Concrete Cost Calculator" />
+              <input type="hidden" name="estimate_low" id="lead_low" value="" />
+              <input type="hidden" name="estimate_avg" id="lead_avg" value="" />
+              <input type="hidden" name="estimate_high" id="lead_high" value="" />
+
+              <label for="lead_name">Name</label>
+              <input id="lead_name" name="name" placeholder="Your name" required />
+
+              <label for="lead_phone">Phone</label>
+              <input id="lead_phone" name="phone" inputmode="tel" placeholder="(555) 555-5555" required />
+
+              <label for="lead_email">Email</label>
+              <input id="lead_email" name="email" inputmode="email" placeholder="you@example.com" required />
+
+              <label for="lead_zip">ZIP / City</label>
+              <input id="lead_zip" name="zip_city" placeholder="76028 / Burleson" required />
+
+              <label for="lead_timeline">Timeline</label>
+              <select id="lead_timeline" name="timeline" required>
+                <option value="" selected disabled>Select one</option>
+                <option>ASAP (0–7 days)</option>
+                <option>2–4 weeks</option>
+                <option>1–3 months</option>
+                <option>Just researching</option>
+              </select>
+
+              <label for="lead_notes">Project details</label>
+              <input id="lead_notes" name="notes" placeholder="Finish, thickness, demo, timing, etc." />
+
+              <div class="btns">
+                <button class="primary" type="submit">Request exact quote</button>
+              </div>
+
+              <p class="note" id="quoteStatus" style="margin-top:10px;"></p>
             </form>
           </div>
         </div>
@@ -190,21 +219,25 @@
   <script>
     const $ = (id) => document.getElementById(id);
 
-    // Simple regional multiplier by first digit of zip (rough heuristic).
-    // You can replace tomorrow with your BuiltQuote region logic.
     function regionMultiplier(zip){
       const z = (zip || "").trim();
       if(!/^\d{5}$/.test(z)) return 1.00;
       const first = z[0];
-      const table = {
-        "0":1.05,"1":1.03,"2":1.00,"3":0.98,"4":0.97,
-        "5":0.99,"6":1.00,"7":0.96,"8":1.02,"9":1.08
-      };
+      const table = {"0":1.05,"1":1.03,"2":1.00,"3":0.98,"4":0.97,"5":0.99,"6":1.00,"7":0.96,"8":1.02,"9":1.08};
       return table[first] ?? 1.00;
     }
 
     function money(n){ return n.toLocaleString(undefined,{style:"currency",currency:"USD",maximumFractionDigits:0}); }
     function psf(n){ return `${n.toFixed(2)}/sq ft`; }
+
+    function setLeadEstimates(low, avg, high){
+      const l = $("lead_low"), a = $("lead_avg"), h = $("lead_high");
+      if (l && a && h) {
+        l.value = Math.round(low).toString();
+        a.value = Math.round(avg).toString();
+        h.value = Math.round(high).toString();
+      }
+    }
 
     function calcConcrete(){
       const sqft = parseFloat(($("sqft").value || "").replace(/,/g,""));
@@ -215,38 +248,24 @@
 
       if(!sqft || sqft <= 0){
         alert("Enter a valid square footage.");
-        return;
+        return null;
       }
 
-      // Base labor+material per sq ft for 4" basic, BEFORE finish & thickness adjustments.
-      // Ranges are intentionally conservative (planning estimates).
       let lowPsf = 7.5;
       let avgPsf = 10.5;
       let highPsf = 14.0;
 
-      // Thickness adjustment (relative to 4")
       const thicknessFactor = thick / 4;
       lowPsf *= thicknessFactor;
       avgPsf *= thicknessFactor;
       highPsf *= thicknessFactor;
 
-      // Finish multipliers
-      const finishMult = {
-        basic: 1.00,
-        broom: 1.05,
-        stamped: 1.55,
-        exposed: 1.35
-      }[finish] || 1.00;
+      const finishMult = { basic:1.00, broom:1.05, stamped:1.55, exposed:1.35 }[finish] || 1.00;
+      lowPsf *= finishMult; avgPsf *= finishMult; highPsf *= finishMult;
 
-      lowPsf *= finishMult;
-      avgPsf *= finishMult;
-      highPsf *= finishMult;
-
-      // Regional adjustment (light touch)
       const r = regionMultiplier(zip);
       lowPsf *= r; avgPsf *= r; highPsf *= r;
 
-      // Demo add-on (typical range per sq ft)
       const demoLow = demo ? 2.00 : 0;
       const demoAvg = demo ? 3.00 : 0;
       const demoHigh = demo ? 4.50 : 0;
@@ -270,20 +289,72 @@
         `Regional factor: ${r.toFixed(2)}`,
         demo ? `Includes demolition add-on.` : `No demolition included.`
       ].join(" • ");
-
       $("breakdown").textContent = breakdown;
+
+      setLeadEstimates(low, avg, high);
+      return { low, avg, high };
     }
 
-    $("calcBtn").addEventListener("click", calcConcrete);
+    // Calculate click + GA4 event
+    $("calcBtn").addEventListener("click", () => {
+      const res = calcConcrete();
+      if (res && typeof gtag === "function") {
+        gtag("event", "calculator_used", { tool: "concrete_calculator" });
+      }
+    });
+
+    // Reset
     $("resetBtn").addEventListener("click", () => {
-      ["sqft","zip","name","email","details"].forEach(id => $(id).value = "");
+      ["sqft","zip","lead_name","lead_phone","lead_email","lead_zip","lead_notes"].forEach(id => {
+        const el = $(id);
+        if (el) el.value = "";
+      });
+      const t = $("lead_timeline");
+      if (t) t.selectedIndex = 0;
+
       $("thickness").value = "4";
       $("finish").value = "basic";
       $("demo").value = "no";
       ["low","avg","high"].forEach(id => $(id).textContent = "$—");
       ["lowpsf","avgpsf","highpsf"].forEach(id => $(id).textContent = "—");
       $("breakdown").textContent = "Enter details and hit calculate.";
+
+      const qs = $("quoteStatus");
+      if (qs) qs.textContent = "";
+      setLeadEstimates("", "", "");
     });
+
+    // Quote submit (AJAX) + GA4 lead event
+    const quoteForm = $("quoteForm");
+    const quoteStatus = $("quoteStatus");
+    if (quoteForm) {
+      quoteForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        if (quoteStatus) quoteStatus.textContent = "Sending…";
+
+        try {
+          const res = await fetch(quoteForm.action, {
+            method: "POST",
+            body: new FormData(quoteForm),
+            headers: { "Accept": "application/json" }
+          });
+
+          if (res.ok) {
+            if (typeof gtag === "function") {
+              gtag("event", "lead_submitted", { tool: "concrete_calculator" });
+            }
+            if (quoteStatus) quoteStatus.textContent = "✅ Request received. We’ll reach out shortly.";
+            quoteForm.reset();
+            // keep estimates as-is (optional). If you want them cleared, uncomment:
+            // setLeadEstimates("", "", "");
+          } else {
+            if (quoteStatus) quoteStatus.textContent = "⚠️ Something went wrong. Try again in a minute.";
+          }
+        } catch {
+          if (quoteStatus) quoteStatus.textContent = "⚠️ Network error. Please try again.";
+        }
+      });
+    }
   </script>
 </body>
 </html>
