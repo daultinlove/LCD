@@ -21,14 +21,13 @@
   <meta name="twitter:card" content="summary_large_image" />
 
   <!-- GA4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-4C2S3JEJS5"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-4C2S3JEJS5');
-</script>
-  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4C2S3JEJS5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-4C2S3JEJS5');
+  </script>
 </head>
 
 <body>
@@ -64,7 +63,7 @@
         </svg>
       </button>
 
-      <a class="btn btn-primary" href="contact.html">Start your website</a>
+      <a class="btn primary" href="contact.html">Start your website</a>
     </div>
   </div>
 </header>
@@ -73,17 +72,24 @@
   <section class="section">
     <div class="container">
       <span class="badge"><span class="dot"></span> Client intake</span>
+
       <h1 class="h1" style="margin-top:12px;">Client intake form</h1>
+
       <p class="lede">
-        This helps me understand your business, goals, and needs before we begin. Once you submit, I will follow up by email with next steps.
+        This helps me understand your business, your goals, and what you need so we can move fast.
+        Once you submit, I’ll follow up by email with a recommended package, timeline, and next step.
+      </p>
+
+      <p class="hint">
+        Most projects start with a setup fee + <strong>$100/mo Website Care</strong>. Growth projects use the <strong>$300/mo Growth Care</strong> plan.
       </p>
 
       <div class="contact-grid" style="margin-top:22px;">
+
         <!-- LEFT: FORM -->
         <div class="card">
-          <h2 style="margin-top:0;">Site details</h2>
+          <h2 style="margin-top:0;">Project details</h2>
 
-          <!-- IMPORTANT: JS submits this form and redirects you (no paid Formspree redirect needed) -->
           <form
             id="intake-form"
             class="contact-form"
@@ -92,6 +98,7 @@
             enctype="multipart/form-data"
           >
             <input type="hidden" name="_subject" value="New intake — Love Crafted Digital" />
+            <input type="hidden" name="_next" value="thank-you.html" />
             <input type="text" name="_gotcha" style="display:none" autocomplete="off" />
 
             <div class="field">
@@ -119,6 +126,7 @@
               <select id="i-best" name="best_contact">
                 <option>Email</option>
                 <option>Text</option>
+                <option>Call (after email)</option>
               </select>
             </div>
 
@@ -142,17 +150,22 @@
 
             <div class="field">
               <label for="i-goals">Main goals for this site</label>
-              <textarea id="i-goals" name="project_goals" rows="5" placeholder="Example: Get quote requests, look more legit, show services clearly"></textarea>
+              <textarea id="i-goals" name="project_goals" rows="5" placeholder="Example: Get quote requests, look more legit, show services clearly" required></textarea>
             </div>
 
             <div class="field">
-              <label for="i-pages">What pages do you need</label>
+              <label for="i-area">Service area (optional)</label>
+              <input id="i-area" type="text" name="service_area" placeholder="Example: Burleson + Fort Worth" />
+            </div>
+
+            <div class="field">
+              <label for="i-pages">What pages do you need?</label>
               <textarea id="i-pages" name="pages_needed" rows="4" placeholder="Example: Home, Services, About, Contact"></textarea>
             </div>
 
             <div class="field">
-              <label for="i-style">Design inspiration or style preferences (optional)</label>
-              <textarea id="i-style" name="design_preferences" rows="4" placeholder="Example: clean and modern, dark mode preferred, a few sites you like"></textarea>
+              <label for="i-style">Design inspiration (optional)</label>
+              <textarea id="i-style" name="design_preferences" rows="4" placeholder="Example: clean + modern, dark mode, and links to a few sites you like"></textarea>
             </div>
 
             <div class="field">
@@ -169,10 +182,11 @@
             <div class="field">
               <label for="i-package">Package of interest</label>
               <select id="i-package" name="package">
+                <option>Not sure yet</option>
                 <option>Starter</option>
                 <option>Standard</option>
                 <option>Premium</option>
-                <option>Not sure yet</option>
+                <option>Growth / 5K Plan</option>
               </select>
             </div>
 
@@ -184,15 +198,16 @@
                 <option>1000 to 2000</option>
                 <option>2000 to 3500</option>
                 <option>3500 plus</option>
+                <option>5000 plus</option>
               </select>
             </div>
 
             <div class="field">
-              <label for="i-notes">Anything else I should know (optional)</label>
+              <label for="i-notes">Anything else I should know? (optional)</label>
               <textarea id="i-notes" name="additional_notes" rows="4"></textarea>
             </div>
 
-            <button class="btn btn-primary" type="submit" style="width:100%;">Submit intake</button>
+            <button class="btn primary" type="submit" style="width:100%;">Submit intake</button>
 
             <p id="intake-status" class="form-status" style="margin-top:.75rem;display:none;"></p>
 
@@ -206,29 +221,44 @@
         <div class="card">
           <h2 style="margin-top:0;">What happens after you submit</h2>
           <p class="section-sub" style="margin-top:6px;">
-            I review your intake and reply by email with a recommended package, a timeline, and the next step to move forward.
+            You’ll get a clear email back with the plan. No pressure — just next steps.
           </p>
+
+          <div class="steps" style="margin-top:14px;">
+            <div class="step">
+              <h3>1) Review</h3>
+              <p>I review your intake and pull out what matters most for conversion and trust.</p>
+            </div>
+            <div class="step">
+              <h3>2) Recommendation</h3>
+              <p>You get the best package + timeline + what I need from you to start.</p>
+            </div>
+            <div class="step">
+              <h3>3) Build</h3>
+              <p>We build quickly, you review, and we launch — then your site stays managed.</p>
+            </div>
+          </div>
 
           <div class="card" style="margin-top:14px;">
             <h3 style="margin-top:0;">Helpful to include</h3>
             <ul class="checklist">
               <li><span class="check"></span><span>Any links to competitors or sites you like</span></li>
-              <li><span class="check"></span><span>Your logo and photos if you have them</span></li>
               <li><span class="check"></span><span>Your service area and main offer</span></li>
+              <li><span class="check"></span><span>Your logo and photos (if you have them)</span></li>
             </ul>
           </div>
 
           <div class="btn-row" style="margin-top:16px;">
-            <a class="btn" href="packages.html">View packages</a>
-            <a class="btn" href="contact.html">Back to contact</a>
+            <a class="btn ghost" href="packages.html">View packages</a>
+            <a class="btn ghost" href="contact.html">Back to contact</a>
           </div>
 
           <p class="hint" style="margin-top:12px;">
-            If you do not have everything ready, submit anyway. We can fill gaps after.
+            If you don’t have everything ready, submit anyway. We can fill gaps after.
           </p>
         </div>
-      </div>
 
+      </div>
     </div>
   </section>
 </main>
