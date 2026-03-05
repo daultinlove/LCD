@@ -851,3 +851,92 @@ html[data-theme="light"] .field textarea{
   margin-bottom:16px;
   opacity:.85;
 }
+
+/* =========================
+   PRICING
+========================= */
+
+.pricing{
+  padding:80px 0;
+}
+
+.pricing-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;
+  max-width:1100px;
+  margin:40px auto;
+  padding:0 20px;
+}
+
+.price-card{
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:16px;
+  padding:30px 24px;
+  text-align:center;
+
+  transition:all .25s ease;
+}
+
+.price-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 20px 40px rgba(0,0,0,.35);
+}
+
+.price-name{
+  margin-bottom:10px;
+}
+
+.price{
+  font-size:36px;
+  font-weight:700;
+  margin-bottom:20px;
+}
+
+.price span{
+  font-size:16px;
+  opacity:.7;
+}
+
+.price-features{
+  list-style:none;
+  padding:0;
+  margin:0 0 25px 0;
+}
+
+.price-features li{
+  margin-bottom:8px;
+}
+
+.featured{
+  border:2px solid #ff3769;
+  transform:scale(1.05);
+}
+
+.price-badge{
+  background:#ff3769;
+  color:white;
+  font-size:12px;
+  padding:4px 10px;
+  border-radius:20px;
+  display:inline-block;
+  margin-bottom:10px;
+}
+
+.care-plan{
+  text-align:center;
+  max-width:600px;
+  margin:50px auto 0;
+  padding:30px;
+
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:16px;
+}
+
+.care-price{
+  font-size:28px;
+  margin:15px 0;
+  font-weight:700;
+}
