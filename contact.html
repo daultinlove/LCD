@@ -21,13 +21,13 @@
   <meta name="twitter:card" content="summary_large_image" />
 
   <!-- GA4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-4C2S3JEJS5"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-4C2S3JEJS5');
-</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4C2S3JEJS5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-4C2S3JEJS5');
+  </script>
 </head>
 
 <body>
@@ -63,22 +63,29 @@
         </svg>
       </button>
 
-      <a class="btn btn-primary" href="contact.html">Start your site</a>
+      <a class="btn primary" href="contact.html">Start your site</a>
     </div>
   </div>
 </header>
 
 <main id="main">
+
+  <!-- INTRO -->
   <section class="section">
     <div class="container">
-      <span class="badge"><span class="dot"></span> Quick response. Clear next step.</span>
-      <h1 class="h1" style="margin-top:12px;">Start your site</h1>
+      <span class="badge"><span class="dot"></span> Quick response. Clear next steps.</span>
+      <h1 class="h1" style="margin-top:12px;">Start your website</h1>
       <p class="lede">
-        Tell me what you do and what you want your site to accomplish. I usually reply within <strong>24 hours</strong> by email with next steps.
+        Tell me what you do and what you want your site to accomplish. I usually reply within <strong>24 hours</strong>
+        by email with a recommended package, timeline, and next step.
+      </p>
+      <p class="hint" style="margin-top:10px;">
+        Most projects start with a setup fee + <strong>$100/mo Website Care</strong> (hosting, updates, backups, security).
       </p>
 
       <div class="contact-grid" style="margin-top:22px;">
-        <!-- LEFT: FORM (keeps your existing IDs and hidden fields so main.js still works) -->
+
+        <!-- LEFT: FORM -->
         <div class="card">
           <h2 style="margin-top:0;">Send a message</h2>
 
@@ -103,17 +110,37 @@
             </div>
 
             <div class="field">
+              <label for="c-package">Which package are you thinking?</label>
+              <select id="c-package" name="package">
+                <option value="Not sure yet" selected>Not sure yet</option>
+                <option value="Starter ($399 setup + $100/mo care)">Starter</option>
+                <option value="Standard ($899 setup + $100/mo care)">Standard (Most Popular)</option>
+                <option value="Premium ($1900 setup + $100/mo care)">Premium</option>
+                <option value="Growth / 5K Plan ($5k+ setup + $300/mo)">Growth / 5K Plan</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="c-contact">Preferred contact</label>
+              <select id="c-contact" name="preferred_contact">
+                <option value="Email" selected>Email</option>
+                <option value="Text">Text</option>
+                <option value="Call (after email)">Call (after email)</option>
+              </select>
+            </div>
+
+            <div class="field">
               <label for="c-message">What do you need your website to do?</label>
               <textarea
                 id="c-message"
                 name="message"
                 rows="6"
-                placeholder="Example: I need a clean site that gets calls and quote requests."
+                placeholder="Example: I need a clean site that gets calls and quote requests. I serve Burleson + Fort Worth."
                 required
               ></textarea>
             </div>
 
-            <button class="btn btn-primary" type="submit">Send message</button>
+            <button class="btn primary" type="submit">Send message</button>
 
             <p class="hint" style="margin-top:12px;">
               Email comes first. Calls come later if needed.
@@ -127,31 +154,75 @@
         <div class="card">
           <h2 style="margin-top:0;">What happens next</h2>
           <p class="section-sub" style="margin-top:6px;">
-            I review your message and reply by email with a recommended package, a timeline, and the next step to move forward.
+            Here’s the simple flow so you know exactly what to expect.
           </p>
+
+          <div class="steps" style="margin-top:14px;">
+            <div class="step">
+              <h3>1) Quick reply</h3>
+              <p>I’ll email you a recommended package + timeline within about 24 hours.</p>
+            </div>
+            <div class="step">
+              <h3>2) Intake</h3>
+              <p>If it’s a fit, you’ll send your business info, photos, and any links you like.</p>
+            </div>
+            <div class="step">
+              <h3>3) Build + launch</h3>
+              <p>I build fast, you review, and we launch. Then your site stays managed on the care plan.</p>
+            </div>
+          </div>
 
           <div class="card" style="margin-top:14px;">
             <h3 style="margin-top:0;">Helpful to include</h3>
             <ul class="checklist">
               <li><span class="check"></span><span>Your services and service area</span></li>
               <li><span class="check"></span><span>Any links to sites you like</span></li>
-              <li><span class="check"></span><span>Your logo and photos if you have them</span></li>
+              <li><span class="check"></span><span>Your logo and photos (if you have them)</span></li>
             </ul>
           </div>
 
           <div class="btn-row" style="margin-top:16px;">
-            <a class="btn" href="packages.html">View packages</a>
-            <a class="btn" href="intake.html">Fill out intake</a>
+            <a class="btn ghost" href="packages.html">View packages</a>
+            <a class="btn ghost" href="intake.html">Fill out intake</a>
           </div>
 
           <p class="hint" style="margin-top:12px;">
-            If you do not have everything ready, send the message anyway. We can fill gaps after.
+            Don’t have everything ready? Message anyway. We can fill gaps after.
           </p>
         </div>
+
       </div>
 
     </div>
   </section>
+
+  <!-- QUICK FAQ -->
+  <section class="section">
+    <div class="container">
+      <div class="top-line">
+        <h2>Quick FAQ</h2>
+        <p class="section-sub">Common questions before someone starts.</p>
+      </div>
+
+      <div class="grid3">
+        <div class="card">
+          <h3>How long does a site take?</h3>
+          <p>Most sites launch in 1–2 weeks once your info and photos are in.</p>
+        </div>
+
+        <div class="card">
+          <h3>What does the $100/mo cover?</h3>
+          <p>Hosting, updates, backups, and basic security — plus minor content edits when needed.</p>
+        </div>
+
+        <div class="card">
+          <h3>Can you handle my domain?</h3>
+          <p>Yes. You keep ownership — I can help set it up and manage the tech side.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
 </main>
 
 <footer class="site-footer">
@@ -182,6 +253,9 @@
   </div>
 </footer>
 
+<script src="js/main.js" defer></script>
+</body>
+</html>
 <!-- Keep your existing JS. This is where your Formspree endpoint already lives. -->
 <script src="js/main.js" defer></script>
 </body>
