@@ -6,4 +6,9 @@
   <url><loc>https://lovecrafteddigital.com/about.html</loc></url>
   <url><loc>https://lovecrafteddigital.com/contact.html</loc></url>
   <url><loc>https://lovecrafteddigital.com/intake.html</loc></url>
+
+  <!-- SEO demo landing pages (index these) -->
+  <url><loc>https://lovecrafteddigital.com/demos/food-truck-website-example.html</loc></url>
+  <url><loc>https://lovecrafteddigital.com/demos/contractor-website-example.html</loc></url>
+  <url><loc>https://lovecrafteddigital.com/demos/pest-control-website-design.html</loc></url>
 </urlset>
