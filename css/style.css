@@ -367,6 +367,16 @@ html[data-theme="light"] .site-header{
   margin-top: 4px;
 }
 
+.hero-trust{
+  margin-top: 14px;
+  font-size: .95rem;
+  color: var(--muted);
+}
+.hero-trust strong{
+  color: var(--ink);
+  font-weight: 700;
+}
+
 /* =============== TRUST BAR =============== */
 .trustbar{
   padding: 24px 0 10px;
