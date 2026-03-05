@@ -269,3 +269,63 @@ iframe{
   border-radius: 28px;
   padding: 10px;
 }
+/* =========================================
+   Demo SEO Pages — Color hierarchy fixes
+   Paste this at the BOTTOM of your CSS
+========================================= */
+
+/* 1) Make the top hero pill neutral (not an accent) */
+.pill{
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.10);
+  color: rgba(255,255,255,.82);
+}
+
+/* Keep the dot as the only blue element up there */
+.dot{
+  background: rgba(63,169,245,.95);
+  box-shadow: 0 0 0 6px rgba(63,169,245,.10);
+}
+
+/* 2) Make price text NOT blue (blue should be reserved for actions) */
+.price{
+  color: rgba(255,255,255,.90);
+}
+
+/* 3) Turn your tags into neutral chips (stop using “blue” everywhere) */
+.tags span{
+  background: rgba(0,0,0,.16);
+  border: 1px solid rgba(255,255,255,.12);
+  color: rgba(255,255,255,.78);
+}
+
+/* 4) Make the "note" area slightly red-tinted instead of blue (variety + emphasis) */
+.menu-note{
+  background: rgba(194,58,58,.10);
+  border: 1px solid rgba(194,58,58,.18);
+  color: rgba(255,255,255,.84);
+}
+
+/* 5) Keep links blue, but slightly softer so they don't scream */
+.notice a,
+.small-link{
+  color: rgba(140,210,255,.95);
+}
+
+/* 6) Give secondary button a stronger glass look so it’s clearly NOT the main action */
+.btn-secondary{
+  background: rgba(255,255,255,.06);
+  border-color: rgba(255,255,255,.16);
+}
+
+/* 7) Add a red hover on primary CTA for a premium “agency” feel (optional but nice) */
+.btn-primary:hover{
+  border-color: rgba(194,58,58,.35);
+  background: linear-gradient(135deg, rgba(194,58,58,.95), rgba(63,169,245,.55));
+}
+
+/* 8) Make featured cards use a subtle neutral highlight (not another blue wash) */
+.day.featured{
+  background: linear-gradient(180deg, rgba(255,255,255,.09), rgba(255,255,255,.04));
+  border-color: rgba(255,255,255,.16);
+}
