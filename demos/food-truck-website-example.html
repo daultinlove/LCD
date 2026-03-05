@@ -92,11 +92,18 @@
           <!-- Point this to your actual demo site file -->
           <div class="frame-wrap">
             <iframe
-              title="Food Truck Demo Website"
-              src="/demos/demo-foodtruck.html"
-              loading="lazy"
-              referrerpolicy="no-referrer"
-            ></iframe>
+  id="demoFrame"
+  title="Food Truck Demo Website"
+  src="/demos/demo-foodtruck.html#top"
+  loading="lazy"
+></iframe>
+
+<script>
+  const f = document.getElementById('demoFrame');
+  f.addEventListener('load', () => {
+    try { f.contentWindow.scrollTo(0, 0); } catch(e) {}
+  });
+</script>
           </div>
 
           <div class="preview-bottom">
