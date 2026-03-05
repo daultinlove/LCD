@@ -940,3 +940,211 @@ html[data-theme="light"] .field textarea{
   margin:15px 0;
   font-weight:700;
 }
+
+/* =========================================================
+   HOTFIX OVERRIDES — force mockup layout to win
+   Paste at END of file
+========================================================= */
+
+/* --- HERO: kill legacy 2-col grid and keep centered mockup --- */
+.hero{
+  position: relative;
+  padding: clamp(64px, 8vw, 110px) 0 44px;
+  overflow: hidden;
+}
+
+.hero::before{
+  content:"";
+  position:absolute; inset:-2px;
+  background:
+    radial-gradient(900px 520px at 18% 20%, rgba(35,120,255,.28), transparent 60%),
+    radial-gradient(900px 520px at 82% 18%, rgba(255,55,105,.22), transparent 60%),
+    radial-gradient(800px 700px at 55% 80%, rgba(255,255,255,.06), transparent 55%),
+    linear-gradient(180deg, rgba(7,10,18,.86), rgba(7,10,18,.86));
+  pointer-events:none;
+  z-index:0;
+}
+
+.hero-grid{
+  position: relative;
+  z-index: 1;
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center;
+
+  /* IMPORTANT: overrides legacy grid layout */
+  display: block;
+}
+
+.badge{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:10px 14px;
+  border-radius:999px;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.10);
+  color: rgba(255,255,255,.80);
+  margin: 0 auto 18px;
+  width: fit-content;
+}
+
+.badge .dot{
+  width:10px; height:10px;
+  border-radius:50%;
+  background: rgba(255,55,105,.9);
+  box-shadow: 0 0 18px rgba(255,55,105,.35);
+}
+
+.h1{
+  margin: 0 auto 14px;
+  max-width: 960px;
+  font-size: clamp(34px, 5vw, 56px);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: rgba(255,255,255,.92);
+
+  /* stop legacy serif from changing mockup feel */
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-weight: 800;
+}
+
+.lede{
+  margin: 0 auto 26px;
+  max-width: 760px;
+  font-size: clamp(16px, 2vw, 20px);
+  color: rgba(255,255,255,.72);
+  line-height: 1.6;
+}
+
+.hint{
+  margin-top: 14px;
+  color: rgba(255,255,255,.62);
+  font-size: 14px;
+}
+
+/* CTA row uses .nav-actions in your hero markup */
+.hero .nav-actions{
+  display:flex;
+  gap:12px;
+  justify-content:center;
+  flex-wrap:wrap;
+  margin-top: 4px;
+}
+
+/* --- BUTTONS: unify naming (supports both systems) --- */
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  padding: 12px 18px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(255,255,255,.06);
+  color: rgba(255,255,255,.88);
+  font-weight: 700;
+  transition: transform .15s ease, box-shadow .15s ease, background .15s ease, border-color .15s ease;
+  min-width: 170px;
+  cursor: pointer;
+}
+
+.btn:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(0,0,0,.25);
+  border-color: rgba(255,255,255,.22);
+}
+
+/* support BOTH: .btn primary AND .btn-primary */
+.btn.primary,
+.btn-primary{
+  background: linear-gradient(135deg, rgba(255,55,105,.95), rgba(255,55,105,.70));
+  border-color: rgba(255,55,105,.35);
+}
+
+.btn.ghost,
+.btn-ghost{
+  background: rgba(255,255,255,.06);
+}
+
+/* --- PRICING: make .pricing a section again (kills legacy grid) --- */
+.pricing{
+  padding: 80px 0;
+  display: block;      /* overrides legacy .pricing{display:grid} */
+}
+
+.pricing-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;
+  max-width:1100px;
+  margin:40px auto;
+  padding:0 20px;
+  justify-content:center;
+}
+
+.price-card{
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.10);
+  border-radius:16px;
+  padding:30px 24px;
+  text-align:center;
+  transition:all .25s ease;
+}
+
+.price-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 20px 40px rgba(0,0,0,.35);
+  border-color: rgba(255,255,255,.2);
+}
+
+.price{
+  font-size:36px;
+  font-weight:800;
+  margin-bottom:20px;
+}
+
+.price span{
+  font-size:16px;
+  opacity:.7;
+}
+
+.price-features{
+  list-style:none;
+  padding:0;
+  margin:0 0 25px 0;
+}
+
+.price-features li{ margin-bottom:8px; }
+
+.price-card.featured{
+  border:2px solid rgba(255,55,105,.95);
+  transform:scale(1.03);
+}
+
+.price-badge{
+  background: rgba(255,55,105,.95);
+  color:white;
+  font-size:12px;
+  padding:4px 10px;
+  border-radius:20px;
+  display:inline-block;
+  margin-bottom:10px;
+}
+
+.care-plan{
+  text-align:center;
+  max-width:600px;
+  margin:50px auto 0;
+  padding:30px;
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.10);
+  border-radius:16px;
+}
+
+.care-price{
+  font-size:28px;
+  margin:15px 0;
+  font-weight:800;
+}
