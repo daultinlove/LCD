@@ -260,3 +260,12 @@ iframe{
   iframe{ height: 520px; }
   .cards{ grid-template-columns: 1fr; }
 }
+.frame-wrap iframe{
+  border-radius: 26px;
+}
+
+.frame-wrap{
+  background: rgba(0,0,0,.18);
+  border-radius: 28px;
+  padding: 10px;
+}
