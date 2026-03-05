@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900" viewBox="0 0 1400 900" role="img" aria-label="Burger food truck illustration">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#071725"></stop>
+      <stop offset="1" stop-color="#0F2A44"></stop>
+    </linearGradient>
+    <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.20"></stop>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0.05"></stop>
+    </linearGradient>
+    <linearGradient id="truck" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#3FA9F5" stop-opacity="0.95"></stop>
+      <stop offset="1" stop-color="#3FA9F5" stop-opacity="0.55"></stop>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#C23A3A" stop-opacity="0.95"></stop>
+      <stop offset="1" stop-color="#C23A3A" stop-opacity="0.55"></stop>
+    </linearGradient>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#000" flood-opacity="0.35"></feDropShadow>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1400" height="900" fill="url(#bg)"></rect>
+  <circle cx="230" cy="180" r="220" fill="#3FA9F5" fill-opacity="0.14"></circle>
+  <circle cx="1180" cy="210" r="260" fill="#C23A3A" fill-opacity="0.10"></circle>
+
+  <!-- Ground -->
+  <rect x="0" y="650" width="1400" height="250" fill="#06101a"></rect>
+  <rect x="0" y="650" width="1400" height="4" fill="#ffffff" fill-opacity="0.06"></rect>
+
+  <!-- Truck group -->
+  <g filter="url(#softShadow)" transform="translate(190,230)">
+    <!-- Truck body -->
+    <rect x="220" y="170" width="740" height="320" rx="38" fill="url(#truck)" stroke="#ffffff" stroke-opacity="0.14"></rect>
+    <rect x="90" y="240" width="240" height="250" rx="34" fill="url(#truck)" stroke="#ffffff" stroke-opacity="0.14"></rect>
+
+    <!-- Accent stripe -->
+    <rect x="110" y="420" width="830" height="26" rx="13" fill="url(#accent)" opacity="0.95"></rect>
+
+    <!-- Window -->
+    <rect x="130" y="280" width="170" height="90" rx="18" fill="url(#glass)" stroke="#ffffff" stroke-opacity="0.14"></rect>
+
+    <!-- Service window -->
+    <rect x="340" y="240" width="420" height="165" rx="22" fill="#071725" fill-opacity="0.55" stroke="#ffffff" stroke-opacity="0.14"></rect>
+    <rect x="360" y="260" width="380" height="50" rx="14" fill="url(#glass)"></rect>
+    <rect x="360" y="320" width="260" height="18" rx="9" fill="#ffffff" fill-opacity="0.10"></rect>
+    <rect x="360" y="350" width="320" height="18" rx="9" fill="#ffffff" fill-opacity="0.08"></rect>
+
+    <!-- Awning -->
+    <path d="M330 240 C370 190, 730 190, 770 240" fill="#0F2A44" fill-opacity="0.85" stroke="#ffffff" stroke-opacity="0.12"></path>
+    <rect x="330" y="240" width="440" height="18" rx="9" fill="#ffffff" fill-opacity="0.10"></rect>
+
+    <!-- Burger icon -->
+    <g transform="translate(800,210)">
+      <rect x="0" y="0" width="150" height="150" rx="26" fill="#071725" fill-opacity="0.50" stroke="#ffffff" stroke-opacity="0.14"></rect>
+      <path d="M30 58 C38 36, 112 36, 120 58 C122 64, 118 70, 112 70 H38 C32 70, 28 64, 30 58 Z" fill="#F2B36B" opacity="0.95"></path>
+      <rect x="38" y="72" width="74" height="12" rx="6" fill="#57C27A" opacity="0.95"></rect>
+      <rect x="38" y="88" width="74" height="12" rx="6" fill="#7A3B24" opacity="0.95"></rect>
+      <path d="M38 110 H112 C118 110, 122 116, 120 122 C112 142, 38 142, 30 122 C28 116, 32 110, 38 110 Z" fill="#F2B36B" opacity="0.92"></path>
+      <circle cx="48" cy="50" r="3" fill="#ffffff" fill-opacity="0.55"></circle>
+      <circle cx="62" cy="46" r="3" fill="#ffffff" fill-opacity="0.55"></circle>
+      <circle cx="76" cy="48" r="3" fill="#ffffff" fill-opacity="0.55"></circle>
+      <circle cx="92" cy="46" r="3" fill="#ffffff" fill-opacity="0.55"></circle>
+      <circle cx="106" cy="50" r="3" fill="#ffffff" fill-opacity="0.55"></circle>
+    </g>
+
+    <!-- Wheels -->
+    <g>
+      <circle cx="250" cy="520" r="62" fill="#0b0f14"></circle>
+      <circle cx="250" cy="520" r="36" fill="#1b2631"></circle>
+      <circle cx="250" cy="520" r="10" fill="#ffffff" fill-opacity="0.18"></circle>
+
+      <circle cx="770" cy="520" r="62" fill="#0b0f14"></circle>
+      <circle cx="770" cy="520" r="36" fill="#1b2631"></circle>
+      <circle cx="770" cy="520" r="10" fill="#ffffff" fill-opacity="0.18"></circle>
+    </g>
+
+    <!-- Headlight -->
+    <rect x="960" y="410" width="34" height="22" rx="8" fill="#ffffff" fill-opacity="0.55"></rect>
+  </g>
+
+  <!-- Bottom label -->
+  <g transform="translate(0,0)">
+    <rect x="70" y="60" width="460" height="64" rx="18" fill="#071725" fill-opacity="0.55" stroke="#ffffff" stroke-opacity="0.12"></rect>
+    <text x="100" y="102" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="800" fill="rgba(255,255,255,0.92)">
+      Burger Truck Hero Image (Demo)
+    </text>
+  </g>
+</svg>
