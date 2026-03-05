@@ -1,1 +1,354 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
 
+  <title>Burger Truck Demo Website | Example Food Truck Site</title>
+  <meta name="description" content="Demo food truck website example for a burger truck. Built as a sample layout to show what a clean, mobile-first site can look like." />
+  <meta name="robots" content="noindex,follow" />
+  <!-- ^ Keep demo site itself noindex so the SEO page ranks, not the embedded demo -->
+
+  <link rel="icon" type="image/png" href="/assets/lcd_logo_primary.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/css/demo-foodtruck.css" />
+</head>
+
+<body>
+
+  <!-- DEMO BANNER -->
+  <div class="demo-banner" role="note" aria-label="Demo notice">
+    <div class="container demo-banner-inner">
+      <strong>DEMO WEBSITE EXAMPLE</strong>
+      <span>This is a sample burger truck site built by Love Crafted Digital for demonstration.</span>
+      <a class="demo-banner-link" href="/contact.html">Want one like this?</a>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="#top" aria-label="Burger truck home">
+        <span class="mark">BT</span>
+        <span class="word">
+          <span class="name">Boulder Burger Truck</span>
+          <span class="tag">Smash burgers • fries • shakes</span>
+        </span>
+      </a>
+
+      <nav class="nav" aria-label="Food truck navigation">
+        <a href="#menu">Menu</a>
+        <a href="#schedule">Schedule</a>
+        <a href="#catering">Catering</a>
+        <a href="#contact">Contact</a>
+        <a class="btn btn-primary" href="#order">Order Info</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="pill">
+            <span class="dot"></span>
+            Realistic demo layout (example)
+          </div>
+
+          <h1>Smash burgers that hit the spot.</h1>
+
+          <p class="lede">
+            Follow the truck, grab a burger, and be back to your day in minutes.
+            <strong>Demo website example</strong> — replace branding, photos, and schedule with your real info.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#menu">See Menu</a>
+            <a class="btn btn-secondary" href="#schedule">Today’s Stop</a>
+          </div>
+
+          <div class="hero-kpis">
+            <div class="kpi">
+              <div class="k-num">2–5 min</div>
+              <div class="k-lbl">avg. ticket time</div>
+            </div>
+            <div class="kpi">
+              <div class="k-num">Fresh</div>
+              <div class="k-lbl">never frozen beef</div>
+            </div>
+            <div class="kpi">
+              <div class="k-num">Local</div>
+              <div class="k-lbl">events & breweries</div>
+            </div>
+          </div>
+
+          <div class="notice">
+            <strong>Heads up:</strong> This is a demo sample site built by <a href="/index.html">Love Crafted Digital</a>.
+          </div>
+        </div>
+
+        <div class="hero-media">
+          <div class="media-card">
+            <img src="/assets/demos/burger-truck-hero.svg" alt="Illustration of a burger food truck (demo image)" />
+            <div class="media-bar">
+              <div class="media-title">Boulder Burger Truck</div>
+              <div class="media-sub">Demo hero image • replace with real photos later</div>
+            </div>
+          </div>
+
+          <div class="quick-card" id="order">
+            <div class="quick-title">Quick Order Info</div>
+            <div class="quick-row">
+              <span class="label">Pickup:</span>
+              <span class="value">Walk-up window</span>
+            </div>
+            <div class="quick-row">
+              <span class="label">Payments:</span>
+              <span class="value">Cash • Card • Tap</span>
+            </div>
+            <div class="quick-row">
+              <span class="label">Catering:</span>
+              <span class="value">Lunch • Events • Parties</span>
+            </div>
+            <a class="btn btn-ghost full" href="#catering">Request Catering</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MENU -->
+    <section class="section" id="menu">
+      <div class="container">
+        <div class="section-head">
+          <h2>Menu</h2>
+          <p class="muted">Simple, clean menu layout that reads great on mobile. (Demo example.)</p>
+        </div>
+
+        <div class="menu-grid">
+          <article class="menu-card">
+            <div class="menu-top">
+              <h3>The Classic Smash</h3>
+              <div class="price">$9</div>
+            </div>
+            <p>Double smash patty, American cheese, pickles, grilled onions, house sauce.</p>
+            <div class="tags"><span>Most Popular</span><span>Gluten-free bun +$2</span></div>
+          </article>
+
+          <article class="menu-card">
+            <div class="menu-top">
+              <h3>Bacon Heat</h3>
+              <div class="price">$11</div>
+            </div>
+            <p>Bacon, pepper jack, jalapeños, crispy onions, spicy aioli.</p>
+            <div class="tags"><span>Spicy</span><span>Fan favorite</span></div>
+          </article>
+
+          <article class="menu-card">
+            <div class="menu-top">
+              <h3>Mushroom Swiss</h3>
+              <div class="price">$11</div>
+            </div>
+            <p>Sautéed mushrooms, Swiss, caramelized onions, garlic mayo.</p>
+            <div class="tags"><span>Rich</span><span>Classic</span></div>
+          </article>
+
+          <article class="menu-card">
+            <div class="menu-top">
+              <h3>Veggie Stack</h3>
+              <div class="price">$10</div>
+            </div>
+            <p>Grilled veggie patty, lettuce, tomato, pickles, house sauce.</p>
+            <div class="tags"><span>Vegetarian</span><span>Fresh</span></div>
+          </article>
+
+          <article class="menu-card">
+            <div class="menu-top">
+              <h3>Seasoned Fries</h3>
+              <div class="price">$4</div>
+            </div>
+            <p>Crispy fries with seasoning + dip sauce.</p>
+            <div class="tags"><span>Add cheese +$2</span><span>Add bacon +$3</span></div>
+          </article>
+
+          <article class="menu-card">
+            <div class="menu-top">
+              <h3>Milkshake</h3>
+              <div class="price">$6</div>
+            </div>
+            <p>Vanilla, chocolate, or strawberry. Ask for the weekly special.</p>
+            <div class="tags"><span>Cold</span><span>Sweet</span></div>
+          </article>
+        </div>
+
+        <div class="menu-note">
+          <strong>Demo note:</strong> Swap menu items, prices, and add allergens in seconds.
+        </div>
+      </div>
+    </section>
+
+    <!-- SCHEDULE -->
+    <section class="section alt" id="schedule">
+      <div class="container">
+        <div class="section-head">
+          <h2>Weekly Schedule</h2>
+          <p class="muted">This is placeholder schedule content for the demo. Replace with real stops/events.</p>
+        </div>
+
+        <div class="schedule-grid">
+          <div class="day">
+            <div class="day-top">
+              <strong>Mon</strong><span>11:00a – 2:00p</span>
+            </div>
+            <div class="loc">Brewery Row (Downtown)</div>
+            <div class="sub">Live music @ 6p (optional)</div>
+          </div>
+
+          <div class="day">
+            <div class="day-top">
+              <strong>Tue</strong><span>11:30a – 2:00p</span>
+            </div>
+            <div class="loc">Business Park Lot A</div>
+            <div class="sub">Catering inquiries open</div>
+          </div>
+
+          <div class="day">
+            <div class="day-top">
+              <strong>Wed</strong><span>12:00p – 3:00p</span>
+            </div>
+            <div class="loc">City Plaza (Main Entrance)</div>
+            <div class="sub">Bring the office</div>
+          </div>
+
+          <div class="day">
+            <div class="day-top">
+              <strong>Thu</strong><span>5:00p – 9:00p</span>
+            </div>
+            <div class="loc">Thursday Night Market</div>
+            <div class="sub">High traffic night</div>
+          </div>
+
+          <div class="day">
+            <div class="day-top">
+              <strong>Fri</strong><span>11:00a – 2:00p</span>
+            </div>
+            <div class="loc">Hospital Corner Lot</div>
+            <div class="sub">Quick lunch crowd</div>
+          </div>
+
+          <div class="day featured">
+            <div class="day-top">
+              <strong>Sat</strong><span>12:00p – 8:00p</span>
+            </div>
+            <div class="loc">Game Day Event</div>
+            <div class="sub">Best day of the week</div>
+          </div>
+        </div>
+
+        <div class="schedule-cta">
+          <a class="btn btn-primary" href="#contact">Get Text Updates (demo)</a>
+          <a class="btn btn-secondary" href="#catering">Book Catering</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CATERING -->
+    <section class="section" id="catering">
+      <div class="container catering-grid">
+        <div>
+          <h2>Catering</h2>
+          <p class="muted">
+            Perfect for offices, events, birthdays, and weddings. This section is designed to convert.
+            (Demo example.)
+          </p>
+
+          <ul class="bullets">
+            <li>Clear catering options + easy request form</li>
+            <li>Build trust with simple promises (on-time, clean setup)</li>
+            <li>One CTA: request a quote</li>
+          </ul>
+
+          <div class="catering-cards">
+            <div class="mini">
+              <strong>Small Event</strong>
+              <span class="muted">20–40 people</span>
+            </div>
+            <div class="mini">
+              <strong>Medium Event</strong>
+              <span class="muted">40–80 people</span>
+            </div>
+            <div class="mini">
+              <strong>Large Event</strong>
+              <span class="muted">80+ people</span>
+            </div>
+          </div>
+        </div>
+
+        <form class="form" id="contact">
+          <div class="form-top">
+            <strong>Request Catering (Demo Form)</strong>
+            <span class="muted">This form is a layout example. Hook it up to your real email/form tool.</span>
+          </div>
+
+          <label>
+            Name
+            <input type="text" name="name" placeholder="Your name" />
+          </label>
+
+          <label>
+            Phone
+            <input type="tel" name="phone" placeholder="(555) 555-5555" />
+          </label>
+
+          <label>
+            Event Date
+            <input type="date" name="date" />
+          </label>
+
+          <label>
+            Estimated Guests
+            <select name="guests">
+              <option>20–40</option>
+              <option>40–80</option>
+              <option>80+</option>
+            </select>
+          </label>
+
+          <label>
+            Notes
+            <textarea name="notes" rows="4" placeholder="Tell us location, timing, and any special requests..."></textarea>
+          </label>
+
+          <button class="btn btn-primary full" type="button">
+            Send Request (Demo)
+          </button>
+
+          <p class="tiny muted">
+            Demo disclaimer: This is not a real business. Example website only.
+          </p>
+        </form>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container footer-inner">
+        <div>
+          <strong>Boulder Burger Truck</strong>
+          <div class="muted">Demo website example • built by Love Crafted Digital</div>
+        </div>
+        <div class="footer-links">
+          <a href="#menu">Menu</a>
+          <a href="#schedule">Schedule</a>
+          <a href="/packages.html">LCD Packages</a>
+          <a href="/contact.html">Start a Project</a>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+</body>
+</html>
