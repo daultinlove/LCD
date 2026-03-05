@@ -796,3 +796,58 @@ html[data-theme="light"] .field textarea{
 .form-status{
   color: var(--muted2);
 }
+/* =========================
+   RECENT PROJECTS
+========================= */
+
+.recent-projects{
+  padding: 80px 0;
+}
+
+.projects-grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px,1fr));
+  gap: 30px;
+  max-width:1100px;
+  margin:40px auto 0;
+  padding:0 20px;
+}
+
+.project-card{
+  background: rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.10);
+  border-radius:16px;
+  overflow:hidden;
+
+  transition: all .25s ease;
+}
+
+.project-card:hover{
+  transform: translateY(-6px);
+  box-shadow:0 20px 40px rgba(0,0,0,.35);
+  border-color: rgba(255,255,255,.2);
+}
+
+.project-image img{
+  width:100%;
+  display:block;
+}
+
+.project-content{
+  padding:20px;
+}
+
+.project-content h3{
+  margin:0 0 6px 0;
+}
+
+.project-location{
+  font-size:14px;
+  opacity:.7;
+  margin-bottom:8px;
+}
+
+.project-desc{
+  margin-bottom:16px;
+  opacity:.85;
+}
