@@ -1,6 +1,9 @@
 /* =========================================================
-   Love Crafted Digital — Clean CSS (Mockup unified)
-   Replace ENTIRE style.css with this
+   Love Crafted Digital — Unified CSS (FULL REPLACE)
+   Works with updated HTML:
+   - .btn primary / .btn ghost
+   - Also supports legacy .btn-primary / .btn-ghost / .btn-row
+   - Container alignment everywhere
 ========================================================= */
 
 /* =============== RESET =============== */
@@ -13,10 +16,33 @@ body{ margin:0; }
 img{ max-width:100%; display:block; }
 a{ color:inherit; text-decoration:none; }
 button,input,textarea,select{ font:inherit; }
+
 :focus-visible{
   outline:2px solid rgba(63,169,245,.55);
   outline-offset:3px;
   border-radius:12px;
+}
+
+/* =============== ACCESSIBILITY =============== */
+.skip-link{
+  position:absolute;
+  left:-9999px;
+  top:auto;
+  width:1px;
+  height:1px;
+  overflow:hidden;
+}
+.skip-link:focus{
+  left:16px;
+  top:16px;
+  width:auto;
+  height:auto;
+  padding:10px 12px;
+  border-radius:12px;
+  background: rgba(6,10,16,.85);
+  border:1px solid rgba(255,255,255,.18);
+  color: rgba(255,255,255,.92);
+  z-index:9999;
 }
 
 /* =============== TOKENS =============== */
@@ -215,6 +241,15 @@ html[data-theme="light"] .site-header{
   background: rgba(255,255,255,.06);
 }
 
+/* shared rows */
+.btn-row,
+.hero-actions{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top:14px;
+}
+
 /* =============== MOBILE NAV =============== */
 .mobile-toggle{ display:none; }
 
@@ -286,7 +321,16 @@ html[data-theme="light"] .site-header{
   opacity: .9;
 }
 
-/* =============== HERO (Mockup) =============== */
+.notice{
+  border: 1px solid rgba(63,169,245,.22);
+  background: rgba(63,169,245,.10);
+  padding: 12px 14px;
+  border-radius: 14px;
+  color: var(--muted);
+}
+.notice strong{ color: var(--ink); }
+
+/* =============== HERO =============== */
 .hero{
   position:relative;
   padding: clamp(64px, 8vw, 110px) 0 44px;
@@ -310,7 +354,6 @@ html[data-theme="light"] .site-header{
   z-index:1;
   max-width: 1040px;
   margin: 0 auto;
-  padding: 0 20px;
   text-align:center;
 }
 
@@ -358,15 +401,7 @@ html[data-theme="light"] .site-header{
   font-size: 14px;
 }
 
-/* CTA row */
-.hero .nav-actions{
-  display:flex;
-  gap:12px;
-  justify-content:center;
-  flex-wrap:wrap;
-  margin-top: 4px;
-}
-
+/* trust line in hero */
 .hero-trust{
   margin-top: 14px;
   font-size: .95rem;
@@ -378,17 +413,13 @@ html[data-theme="light"] .site-header{
 }
 
 /* =============== TRUST BAR =============== */
-.trustbar{
-  padding: 24px 0 10px;
-}
+.trustbar{ padding: 24px 0 10px; }
 
 .trust-grid{
   display:grid;
   grid-template-columns: repeat(4, minmax(0,1fr));
   gap: 10px;
-  max-width: 980px;
-  margin: 12px auto 0;
-  padding: 0 20px;
+  margin-top: 12px;
 }
 
 .trust-item{
@@ -441,18 +472,24 @@ html[data-theme="light"] .site-header{
   .grid3{ grid-template-columns: 1fr; }
 }
 
-/* =============== RECENT PROJECTS (screenshots) =============== */
-.recent-projects{
-  padding: 80px 0;
+/* =============== SPLIT (about page) =============== */
+.split{
+  display:grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap:16px;
 }
+@media (max-width: 960px){
+  .split{ grid-template-columns: 1fr; }
+}
+
+/* =============== RECENT PROJECTS =============== */
+.recent-projects{ padding: 80px 0; }
 
 .projects-grid{
   display:grid;
   grid-template-columns: repeat(auto-fit, minmax(320px,1fr));
   gap: 30px;
-  max-width:1100px;
-  margin:40px auto 0;
-  padding:0 20px;
+  margin-top: 24px;
 }
 
 .project-card{
@@ -474,13 +511,9 @@ html[data-theme="light"] .site-header{
   display:block;
 }
 
-.project-content{
-  padding:20px;
-}
+.project-content{ padding:20px; }
 
-.project-content h3{
-  margin:0 0 6px 0;
-}
+.project-content h3{ margin:0 0 6px 0; }
 
 .project-location{
   font-size:14px;
@@ -492,6 +525,7 @@ html[data-theme="light"] .site-header{
   margin-bottom:16px;
   opacity:.85;
 }
+.project-desc strong{ color: var(--ink); }
 
 /* =============== STEPS =============== */
 .steps{
@@ -515,20 +549,15 @@ html[data-theme="light"] .site-header{
   .steps{ grid-template-columns: 1fr; }
 }
 
-/* =============== PRICING (Mockup cards + care plan) =============== */
-.pricing{
-  padding: 80px 0;
-  display:block;
-}
+/* =============== PRICING =============== */
+.pricing{ display:block; }
 
 .pricing-grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:30px;
-  max-width:1100px;
-  margin:40px auto;
-  padding:0 20px;
-  justify-content:center;
+  gap: 22px;
+  margin-top: 26px;
+  align-items: stretch;
 }
 
 .price-card{
@@ -546,30 +575,32 @@ html[data-theme="light"] .site-header{
   border-color: rgba(255,255,255,.2);
 }
 
-.price-name{ margin-bottom:10px; }
+.price-name{ margin: 0 0 10px; font-size: 1.15rem; }
 
 .price{
   font-size:36px;
   font-weight:800;
-  margin-bottom:20px;
+  margin: 0 0 18px;
 }
 
 .price span{
   font-size:16px;
   opacity:.7;
+  margin-left:6px;
 }
 
 .price-features{
   list-style:none;
   padding:0;
-  margin:0 0 25px 0;
+  margin:0 0 18px 0;
+  display:grid;
+  gap:8px;
+  color: rgba(255,255,255,.78);
 }
-
-.price-features li{ margin-bottom:8px; }
 
 .price-card.featured{
   border:2px solid rgba(255,55,105,.95);
-  transform:scale(1.03);
+  transform:scale(1.04);
 }
 
 .price-badge{
@@ -580,31 +611,39 @@ html[data-theme="light"] .site-header{
   border-radius:20px;
   display:inline-block;
   margin-bottom:10px;
+  letter-spacing:.08em;
 }
 
 .care-plan{
-  text-align:center;
-  max-width:600px;
-  margin:50px auto 0;
-  padding:30px;
+  margin-top: 26px;
+  padding: 22px;
   background:rgba(255,255,255,.04);
   border:1px solid rgba(255,255,255,.10);
   border-radius:16px;
 }
 
-.care-plan ul{
+/* =============== LISTS used on Packages page (.ul + .check) =============== */
+.ul{
   list-style:none;
   padding:0;
   margin: 14px 0 0;
   display:grid;
   gap:10px;
-  justify-items:center;
 }
-
-.care-price{
-  font-size:28px;
-  margin:15px 0;
-  font-weight:800;
+.ul li{
+  display:flex;
+  gap:10px;
+  align-items:flex-start;
+  color: var(--muted);
+}
+.check{
+  width: 18px;
+  height: 18px;
+  border-radius: 6px;
+  background: rgba(63,169,245,.20);
+  border: 1px solid rgba(63,169,245,.35);
+  margin-top: 2px;
+  flex:0 0 auto;
 }
 
 /* =============== FOOTER =============== */
@@ -643,13 +682,6 @@ html[data-theme="light"] .site-footer{
   .footer-grid{ grid-template-columns: 1fr; }
 }
 
-.btn-row{
-  display:flex;
-  gap:10px;
-  flex-wrap:wrap;
-  margin-top:14px;
-}
-
 /* =============== CONTACT =============== */
 .contact-grid{
   display:grid;
@@ -675,7 +707,8 @@ html[data-theme="light"] .site-footer{
 }
 
 .field input,
-.field textarea{
+.field textarea,
+.field select{
   width:100%;
   border-radius: 14px;
   border: 1px solid var(--line);
@@ -687,7 +720,8 @@ html[data-theme="light"] .site-footer{
 }
 
 html[data-theme="light"] .field input,
-html[data-theme="light"] .field textarea{
+html[data-theme="light"] .field textarea,
+html[data-theme="light"] .field select{
   background: rgba(255,255,255,.72);
 }
 
@@ -702,7 +736,8 @@ html[data-theme="light"] .field textarea{
 }
 
 .field input:focus,
-.field textarea:focus{
+.field textarea:focus,
+.field select:focus{
   border-color: rgba(63,169,245,.45);
   box-shadow: 0 0 0 4px rgba(63,169,245,.18), 0 12px 30px rgba(0,0,0,.18);
 }
