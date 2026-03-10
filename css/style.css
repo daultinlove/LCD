@@ -1,6 +1,7 @@
 /* =========================================================
    Love Crafted Digital — Unified CSS (FULL REPLACE)
    Clean theme split for DARK + LIGHT
+   Red + blue brand accents
    Supports:
    - .btn primary / .btn ghost
    - legacy .btn-primary / .btn-ghost / .btn-row
@@ -52,8 +53,8 @@ select { font: inherit; }
 :root{
   --navy: #0F2A44;
   --blue: #3FA9F5;
-  --red: #ff4d7a;
-  --red-deep: #e63d69;
+  --red: #C23A3A;
+  --red-deep: #9E2E2E;
 
   --radius: 18px;
   --radius2: 26px;
@@ -63,7 +64,7 @@ select { font: inherit; }
   --bg-color: #08111b;
   --bg-image:
     radial-gradient(1200px 700px at 18% 10%, rgba(63,169,245,.16), transparent 60%),
-    radial-gradient(900px 650px at 82% 18%, rgba(255,77,122,.12), transparent 58%),
+    radial-gradient(900px 650px at 82% 18%, rgba(194,58,58,.12), transparent 58%),
     linear-gradient(180deg, rgba(6,10,16,.88), rgba(6,10,16,.84)),
     url("../assets/blurry.png") center / cover no-repeat fixed;
 
@@ -90,7 +91,7 @@ select { font: inherit; }
 
   --hero-overlay:
     radial-gradient(900px 520px at 18% 20%, rgba(35,120,255,.28), transparent 60%),
-    radial-gradient(900px 520px at 82% 18%, rgba(255,55,105,.22), transparent 60%),
+    radial-gradient(900px 520px at 82% 18%, rgba(194,58,58,.18), transparent 60%),
     radial-gradient(800px 700px at 55% 80%, rgba(255,255,255,.05), transparent 55%),
     linear-gradient(180deg, rgba(7,10,18,.84), rgba(7,10,18,.88));
 
@@ -102,12 +103,12 @@ select { font: inherit; }
   --ghost-border: rgba(255,255,255,.14);
   --ghost-text: rgba(255,255,255,.88);
 
-  --primary-bg: linear-gradient(135deg, #ff4d7a, #ff6a8d);
-  --primary-border: rgba(255,77,122,.42);
+  --primary-bg: linear-gradient(135deg, #C23A3A, #D44A4A);
+  --primary-border: rgba(194,58,58,.42);
   --primary-text: #ffffff;
 
-  --popular-ring: rgba(255,77,122,.95);
-  --popular-bg: rgba(255,77,122,.12);
+  --popular-ring: rgba(194,58,58,.95);
+  --popular-bg: rgba(194,58,58,.10);
 
   --trust-bg: rgba(255,255,255,.04);
   --trust-item-bg: rgba(0,0,0,.12);
@@ -129,7 +130,7 @@ html[data-theme="light"]{
   --bg-color: #f5f7fb;
   --bg-image:
     radial-gradient(1200px 700px at 18% 10%, rgba(63,169,245,.14), transparent 60%),
-    radial-gradient(900px 650px at 82% 18%, rgba(255,77,122,.10), transparent 58%),
+    radial-gradient(900px 650px at 82% 18%, rgba(194,58,58,.10), transparent 58%),
     linear-gradient(180deg, rgba(255,255,255,.96), rgba(246,248,252,.98));
 
   --text: rgba(14,23,36,.96);
@@ -155,7 +156,7 @@ html[data-theme="light"]{
 
   --hero-overlay:
     radial-gradient(900px 520px at 18% 18%, rgba(63,169,245,.16), transparent 60%),
-    radial-gradient(900px 520px at 82% 18%, rgba(255,77,122,.14), transparent 60%),
+    radial-gradient(900px 520px at 82% 18%, rgba(194,58,58,.12), transparent 60%),
     linear-gradient(180deg, rgba(255,255,255,.86), rgba(247,249,253,.92));
 
   --badge-bg: rgba(255,255,255,.86);
@@ -166,12 +167,12 @@ html[data-theme="light"]{
   --ghost-border: rgba(14,23,36,.12);
   --ghost-text: rgba(14,23,36,.88);
 
-  --primary-bg: linear-gradient(135deg, #ff4d7a, #ff6188);
-  --primary-border: rgba(255,77,122,.32);
+  --primary-bg: linear-gradient(135deg, #C23A3A, #D44A4A);
+  --primary-border: rgba(194,58,58,.32);
   --primary-text: #ffffff;
 
-  --popular-ring: rgba(255,77,122,.94);
-  --popular-bg: rgba(255,77,122,.06);
+  --popular-ring: rgba(194,58,58,.94);
+  --popular-bg: rgba(194,58,58,.06);
 
   --trust-bg: rgba(255,255,255,.62);
   --trust-item-bg: rgba(255,255,255,.92);
@@ -334,7 +335,7 @@ main{ padding-bottom: 64px; }
   background: var(--primary-bg);
   border: 1px solid var(--primary-border);
   color: var(--primary-text);
-  box-shadow: 0 12px 24px rgba(255,77,122,.22);
+  box-shadow: 0 12px 24px rgba(194,58,58,.22);
 }
 
 .btn.ghost,
@@ -422,7 +423,7 @@ main{ padding-bottom: 64px; }
   width: 72px;
   height: 3px;
   border-radius: 999px;
-  background: linear-gradient(90deg, rgba(63,169,245,.90), rgba(255,77,122,.72));
+  background: linear-gradient(90deg, rgba(63,169,245,.90), rgba(194,58,58,.78));
   margin: 14px 0 22px;
   opacity: .95;
 }
@@ -478,8 +479,8 @@ main{ padding-bottom: 64px; }
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background: rgba(255,77,122,.95);
-  box-shadow: 0 0 18px rgba(255,77,122,.35);
+  background: rgba(194,58,58,.95);
+  box-shadow: 0 0 18px rgba(194,58,58,.35);
 }
 
 .h1{
@@ -722,7 +723,7 @@ main{ padding-bottom: 64px; }
 .price-card.featured{
   border: 2px solid var(--popular-ring);
   transform: translateY(-4px) scale(1.02);
-  box-shadow: 0 22px 46px rgba(255,77,122,.16), var(--card-shadow);
+  box-shadow: 0 22px 46px rgba(194,58,58,.16), var(--card-shadow);
 }
 
 .price-card.featured::before{
@@ -746,7 +747,7 @@ main{ padding-bottom: 64px; }
   display: inline-block;
   margin-bottom: 10px;
   letter-spacing: .08em;
-  box-shadow: 0 10px 22px rgba(255,77,122,.22);
+  box-shadow: 0 10px 22px rgba(194,58,58,.22);
 }
 
 .price-name{
