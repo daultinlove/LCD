@@ -594,7 +594,7 @@ html[data-theme="light"] .site-header{
 }
 
 .price-card{
-  background:rgba(#ffffff);
+  background: #ffffff;
   border:1px solid rgba(255,255,255,.10);
   border-radius:16px;
   padding:30px 24px;
